@@ -1,5 +1,5 @@
 package com.javanine.finalProject.model.enums;
 
-public enum EmployeeStatuses {
-    
+public enum EmployeeStatus {
+    HOSPITAL, WORKING, HOLIDAY
 }

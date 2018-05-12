@@ -1,39 +1,52 @@
-package com.javanine.finalProject.module;
+package com.javanine.finalProject.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Set;
 
 @Entity
-@Table (name = "employees")
+@Table(name = "employees")
 @Data
 public class Employee {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column
-    private String email;
+    @Column(name = "first_name")
+    private String firstName;
 
-    @Column
-    private String password;
+    @Column(name = "last_name")
+    private String lastName;
 
-    @Column
-    private String first_name;
+    @ManyToOne
+    @JoinColumn(name="department_id", nullable=false)
+    private Department department;
 
-    @Column
-    private String last_name;
+    @ManyToOne
+    @JoinColumn(name="position_id", nullable=false)
+    private Position position;
 
-    @Column
-    private String address;
+    @Column(name = "hourly_rate")
+    private BigDecimal hourlyRate;
 
-    @Column
-    private String phone;
+    @ManyToOne
+    @JoinColumn(name="status_id", nullable=false)
+    private Status status;
 
-    @Column
-    private BigDecimal salary;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    //private Set<>
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", department=" + department.getName() +
+                ", position=" + position.getName() +
+                ", hourly rate=" + hourlyRate +
+                ", status=" + status.getStatusName() +
+                '}';
+    }
 }

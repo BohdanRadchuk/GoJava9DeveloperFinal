@@ -1,9 +1,8 @@
-package com.javanine.finalProject.module;
+package com.javanine.finalProject.model;
 
 import lombok.Data;
-import lombok.NonNull;
-
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "departments")
@@ -11,8 +10,22 @@ import javax.persistence.*;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column
+    @Column(name="name")
     private String name;
+
+    @OneToMany(mappedBy="department", cascade = CascadeType.ALL)
+    private Set<Position> positions;
+
+    @OneToMany(mappedBy="department", cascade = CascadeType.ALL)
+    private Set<Employee> employees;
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

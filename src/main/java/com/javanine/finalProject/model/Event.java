@@ -1,19 +1,26 @@
-package com.javanine.finalProject.module;
+package com.javanine.finalProject.model;
 
+import com.javanine.finalProject.model.enums.EmployeeEvent;
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "events")
 @Data
 public class Event {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column
-    private String name;
+    @Column(name="name")
+    private EmployeeEvent eventName;
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", name='" + eventName + '\'' +
+                '}';
+    }
 }
 

@@ -1,4 +1,5 @@
 package com.javanine.finalProject.model.enums;
 
-public class EmployeeEvent {
+public enum  EmployeeEvent {
+    WORKING_DAY, TECHNICAL_STUDIES
 }
