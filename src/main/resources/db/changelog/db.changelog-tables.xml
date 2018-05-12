@@ -180,15 +180,15 @@
                 <constraints nullable="false" foreignKeyName="fk_settlement_sheet_employee_id" references="employee(id)"/>
             </column>
 
-            <column name="working_days" type="int">
+            <column name="working_hours" type="int">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="hospital_days" type="int">
+            <column name="hospital_hours" type="int">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="holiday_days" type="int">
+            <column name="holiday_hours" type="int">
                 <constraints nullable="false"/>
             </column>
 
