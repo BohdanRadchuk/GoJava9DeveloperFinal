@@ -16,14 +16,14 @@ public class SettlementSheet {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
-    @Column(name="working_days")
-    private int workingDays;
+    @Column(name="working_hours")
+    private int workingHours;
 
-    @Column(name="hospital_days")
-    private int hospitalDays;
+    @Column(name="hospital_hours")
+    private int hospitalHours;
 
-    @Column(name="holiday_days")
-    private int holidayDays;
+    @Column(name="holiday_hours")
+    private int holidayHours;
 
     @Column(name="salary")
     private BigDecimal salary;
