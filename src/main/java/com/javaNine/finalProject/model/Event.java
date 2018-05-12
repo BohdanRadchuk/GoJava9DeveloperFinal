@@ -1,11 +1,11 @@
-package com.javanine.finalProject.model;
+package com.javaNine.finalProject.model;
 
-import com.javanine.finalProject.model.enums.EmployeeEvent;
+import com.javaNine.finalProject.model.enums.EmployeeEvent;
 import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "events")
+@Table(name = "event")
 @Data
 public class Event {
     @Id

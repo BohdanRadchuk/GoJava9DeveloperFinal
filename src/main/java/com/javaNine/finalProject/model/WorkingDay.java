@@ -1,4 +1,4 @@
-package com.javanine.finalProject.model;
+package com.javaNine.finalProject.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "working_days")
+@Table(name = "working_day")
 @Data
 public class WorkingDay {
     @Id
@@ -17,9 +17,13 @@ public class WorkingDay {
     @Column(name = "date")
     private Date date;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "event_id")
+    @ManyToOne
+    @JoinColumn(name="event_id", nullable=false)
     private Event event;
+
+    @ManyToOne
+    @JoinColumn(name="status_id", nullable=false)
+    private Status status;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id")

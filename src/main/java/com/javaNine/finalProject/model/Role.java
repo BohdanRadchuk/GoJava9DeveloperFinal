@@ -1,12 +1,12 @@
-package com.javanine.finalProject.model;
+package com.javaNine.finalProject.model;
 
-import com.javanine.finalProject.model.enums.UserRole;
+import com.javaNine.finalProject.model.enums.UserRole;
 import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "role")
 @Data
 public class Role {
     @Id

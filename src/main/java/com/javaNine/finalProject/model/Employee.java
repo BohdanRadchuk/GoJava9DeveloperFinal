@@ -1,11 +1,11 @@
-package com.javanine.finalProject.model;
+package com.javaNine.finalProject.model;
 
 import lombok.Data;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "employee")
 @Data
 public class Employee {
     @Id
@@ -29,10 +29,6 @@ public class Employee {
     @Column(name = "hourly_rate")
     private BigDecimal hourlyRate;
 
-    @ManyToOne
-    @JoinColumn(name="status_id", nullable=false)
-    private Status status;
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
@@ -46,7 +42,6 @@ public class Employee {
                 ", department=" + department.getName() +
                 ", position=" + position.getName() +
                 ", hourly rate=" + hourlyRate +
-                ", status=" + status.getStatusName() +
                 '}';
     }
 }

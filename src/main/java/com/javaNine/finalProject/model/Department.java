@@ -1,11 +1,11 @@
-package com.javanine.finalProject.model;
+package com.javaNine.finalProject.model;
 
 import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "departments")
+@Table(name = "department")
 @Data
 public class Department {
     @Id

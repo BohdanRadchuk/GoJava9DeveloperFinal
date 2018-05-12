@@ -1,4 +1,4 @@
-package com.javanine.finalProject.model.enums;
+package com.javaNine.finalProject.model.enums;
 
 public enum EmployeeStatus {
     HOSPITAL, WORKING, HOLIDAY

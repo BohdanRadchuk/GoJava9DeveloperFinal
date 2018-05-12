@@ -1,9 +1,8 @@
-package com.javanine.finalProject.model;
+package com.javaNine.finalProject.model;
 
-import com.javanine.finalProject.model.enums.EmployeeStatus;
+import com.javaNine.finalProject.model.enums.EmployeeStatus;
 import lombok.Data;
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "statuses")
@@ -15,9 +14,6 @@ public class Status {
 
     @Column(name = "name")
     private EmployeeStatus statusName;
-
-    @OneToMany(mappedBy="status", cascade = CascadeType.ALL)
-    private Set<Employee> employees;
 
     @Override
     public String toString() {

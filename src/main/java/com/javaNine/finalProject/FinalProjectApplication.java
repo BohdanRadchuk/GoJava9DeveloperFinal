@@ -1,4 +1,4 @@
-package com.javanine.finalProject;
+package com.javaNine.finalProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
