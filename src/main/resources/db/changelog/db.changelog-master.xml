@@ -6,4 +6,5 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <include file="db/changelog/db.changelog-tables.xml"/>
+    <include file="db/changelog/db.changelog-default-values.xml"/>
 </databaseChangeLog>
