@@ -51,12 +51,12 @@
         <insert tableName="user">
             <column name="id" value="6"/>
             <column name="email" value="elinaAttwood@gmail.com"/>
-            <column name="password" value="daniel12345"/>
+            <column name="password" value="elina12345"/>
         </insert>
         <insert tableName="user">
             <column name="id" value="7"/>
             <column name="email" value="siriusBlack@gmail.com"/>
-            <column name="password" value="daniel12345"/>
+            <column name="password" value="sirius12345"/>
         </insert>
     </changeSet>
 
@@ -247,30 +247,67 @@
     </changeSet>
 
     <!-- Working day -->
-    <!--
     <changeSet id="9" author="javaNine">
         <insert tableName="working_day">
             <column name="id" value="1"/>
-            <column name="date" value=""/>
-            <column name="event_id" value=""/>
-            <column name="status_id" value=""/>
-            <column name="employee_id" value=""/>
-            <column name="hours" value=""/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="1"/>
+            <column name="hours" value="8"/>
         </insert>
-    </changeSet> -->
+        <insert tableName="working_day">
+            <column name="id" value="2"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="2"/>
+            <column name="hours" value="6"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="3"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="1"/>
+            <column name="employee_id" value="3"/>
+            <column name="hours" value="8"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="4"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="4"/>
+            <column name="hours" value="8"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="5"/>
+            <column name="date" value="2018.05.03"/>
+            <column name="event_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="4"/>
+            <column name="hours" value="6"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="6"/>
+            <column name="date" value="2018.05.06"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="3"/>
+            <column name="employee_id" value="5"/>
+            <column name="hours" value="8"/>
+        </insert>
+    </changeSet>
 
-    <!-- Settlement sheet -->
-    <!--
     <changeSet id="10" author="javaNine">
         <insert tableName="settlement_sheet">
             <column name="id" value="1"/>
-            <column name="employee_id" value=""/>
-            <column name="year" value=""/>
-            <column name="month" value=""/>
-            <column name="working_hours" value=""/>
-            <column name="hospital_hours" value=""/>
-            <column name="holiday_hours" value=""/>
-            <column name="salary" value=""/>
+            <column name="employee_id" value="1"/>
+            <column name="year" value="2018"/>
+            <column name="month" value="5"/>
+            <column name="working_hours" value="160"/>
+            <column name="hospital_hours" value="16"/>
+            <column name="holiday_hours" value="64"/>
+            <column name="salary" value="6000"/>
         </insert>
-    </changeSet> -->
+    </changeSet>
 </databaseChangeLog>
