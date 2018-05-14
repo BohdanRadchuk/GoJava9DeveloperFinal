@@ -180,6 +180,14 @@
                 <constraints nullable="false" foreignKeyName="fk_settlement_sheet_employee_id" references="employee(id)"/>
             </column>
 
+            <column name="year" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="month" type="int">
+                <constraints nullable="false"/>
+            </column>
+
             <column name="working_hours" type="int">
                 <constraints nullable="false"/>
             </column>
