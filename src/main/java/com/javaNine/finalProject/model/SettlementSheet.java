@@ -16,6 +16,12 @@ public class SettlementSheet {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
+    @Column (name="year")
+    private int year;
+
+    @Column(name="month")
+    private int month;
+
     @Column(name="working_hours")
     private int workingHours;
 
