@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- Role -->
+    <changeSet id="1" author="javaNine">
+        <insert tableName="role">
+            <column name="id" value="1"/>
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" value="2"/>
+            <column name="name" value="ROLE_MODERATOR"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" value="3"/>
+            <column name="name" value="ROLE_EMPLOYEE"/>
+        </insert>
+    </changeSet>
+
+    <!-- User -->
+    <changeSet id="2" author="javaNine">
+        <insert tableName="user">
+            <column name="id" value="1"/>
+            <column name="email" value="johnSmith@gmail.com"/>
+            <column name="password" value="john12345"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="2"/>
+            <column name="email" value="sarahJones@gmail.com"/>
+            <column name="password" value="sarah12345"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="3"/>
+            <column name="email" value="oliviaEvans@gmail.com"/>
+            <column name="password" value="olivia12345"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="4"/>
+            <column name="email" value="danielBrown@gmail.com"/>
+            <column name="password" value="daniel12345"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="5"/>
+            <column name="email" value="danielSmith@gmail.com"/>
+            <column name="password" value="daniel12345"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="6"/>
+            <column name="email" value="elinaAttwood@gmail.com"/>
+            <column name="password" value="elina12345"/>
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="7"/>
+            <column name="email" value="siriusBlack@gmail.com"/>
+            <column name="password" value="sirius12345"/>
+        </insert>
+    </changeSet>
+
+    <!-- User-roles -->
+    <changeSet id="3" author="javaNine">
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="1"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/>
+            <column name="role_id" value="1"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/>
+            <column name="role_id" value="2"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="3"/>
+            <column name="role_id" value="3"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="4"/>
+            <column name="role_id" value="3"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="5"/>
+            <column name="role_id" value="2"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="6"/>
+            <column name="role_id" value="1"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="7"/>
+            <column name="role_id" value="3"/>
+        </insert>
+    </changeSet>
+
+    <!-- Department -->
+    <changeSet id="4" author="javaNine">
+        <insert tableName="department">
+            <column name="id" value="1"/>
+            <column name="name" value="Finance and Control"/>
+        </insert>
+        <insert tableName="department">
+            <column name="id" value="2"/>
+            <column name="name" value="HR"/>
+        </insert>
+        <insert tableName="department">
+            <column name="id" value="3"/>
+            <column name="name" value="IT Service"/>
+        </insert>
+    </changeSet>
+
+    <!-- Position -->
+    <changeSet id="5" author="javaNine">
+        <insert tableName="position">
+            <column name="id" value="1"/>
+            <column name="name" value="Financial manager"/>
+            <column name="department_id" value="1"/>
+        </insert>
+        <insert tableName="position">
+            <column name="id" value="2"/>
+            <column name="name" value="Financial analyst"/>
+            <column name="department_id" value="1"/>
+        </insert>
+        <insert tableName="position">
+            <column name="id" value="3"/>
+            <column name="name" value="HR-Director"/>
+            <column name="department_id" value="2"/>
+        </insert>
+        <insert tableName="position">
+            <column name="id" value="4"/>
+            <column name="name" value="HR-Manager"/>
+            <column name="department_id" value="2"/>
+        </insert>
+        <insert tableName="position">
+            <column name="id" value="5"/>
+            <column name="name" value="Recruiter"/>
+            <column name="department_id" value="2"/>
+        </insert>
+        <insert tableName="position">
+            <column name="id" value="6"/>
+            <column name="name" value="IT Service manager"/>
+            <column name="department_id" value="3"/>
+        </insert>
+        <insert tableName="position">
+            <column name="id" value="7"/>
+            <column name="name" value="Head of IT Services"/>
+            <column name="department_id" value="3"/>
+        </insert>
+    </changeSet>
+
+    <!-- Event -->
+    <changeSet id="6" author="javaNine">
+        <insert tableName="event">
+            <column name="id" value="1"/>
+            <column name="name" value="WORKING_DAY"/>
+        </insert>
+        <insert tableName="event">
+            <column name="id" value="2"/>
+            <column name="name" value="TECHNICAL_STUDIES"/>
+        </insert>
+    </changeSet>
+
+    <!-- Status -->
+    <changeSet id="7" author="javaNine">
+        <insert tableName="status">
+            <column name="id" value="1"/>
+            <column name="name" value="HOSPITAL"/>
+        </insert>
+        <insert tableName="status">
+            <column name="id" value="2"/>
+            <column name="name" value="WORKING"/>
+        </insert>
+        <insert tableName="status">
+            <column name="id" value="3"/>
+            <column name="name" value="HOLIDAY"/>
+        </insert>
+    </changeSet>
+
+    <!-- Employee -->
+    <changeSet id="8" author="javaNine">
+        <insert tableName="employee">
+            <column name="id" value="1"/>
+            <column name="first_name" value="John"/>
+            <column name="last_name" value="Smith"/>
+            <column name="department_id" value="1"/>
+            <column name="position_id" value="1"/>
+            <column name="hourly_rate" value="50"/>
+            <column name="user_id" value="1"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" value="2"/>
+            <column name="first_name" value="Sarah"/>
+            <column name="last_name" value="Jones"/>
+            <column name="department_id" value="1"/>
+            <column name="position_id" value="2"/>
+            <column name="hourly_rate" value="20"/>
+            <column name="user_id" value="2"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" value="3"/>
+            <column name="first_name" value="Olivia"/>
+            <column name="last_name" value="Evans"/>
+            <column name="department_id" value="2"/>
+            <column name="position_id" value="3"/>
+            <column name="hourly_rate" value="10.50"/>
+            <column name="user_id" value="3"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" value="4"/>
+            <column name="first_name" value="Daniel"/>
+            <column name="last_name" value="Brown"/>
+            <column name="department_id" value="2"/>
+            <column name="position_id" value="4"/>
+            <column name="hourly_rate" value="12.80"/>
+            <column name="user_id" value="4"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" value="5"/>
+            <column name="first_name" value="Daniel"/>
+            <column name="last_name" value="Smith"/>
+            <column name="department_id" value="2"/>
+            <column name="position_id" value="5"/>
+            <column name="hourly_rate" value="12.80"/>
+            <column name="user_id" value="5"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" value="6"/>
+            <column name="first_name" value="Elina"/>
+            <column name="last_name" value="Attwood"/>
+            <column name="department_id" value="3"/>
+            <column name="position_id" value="6"/>
+            <column name="hourly_rate" value="60"/>
+            <column name="user_id" value="6"/>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" value="7"/>
+            <column name="first_name" value="Sirius"/>
+            <column name="last_name" value="Black"/>
+            <column name="department_id" value="3"/>
+            <column name="position_id" value="7"/>
+            <column name="hourly_rate" value="16"/>
+            <column name="user_id" value="7"/>
+        </insert>
+    </changeSet>
+
+    <!-- Working day -->
+    <changeSet id="9" author="javaNine">
+        <insert tableName="working_day">
+            <column name="id" value="1"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="1"/>
+            <column name="hours" value="8"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="2"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="2"/>
+            <column name="hours" value="6"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="3"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="1"/>
+            <column name="employee_id" value="3"/>
+            <column name="hours" value="8"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="4"/>
+            <column name="date" value="2018.05.02"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="4"/>
+            <column name="hours" value="8"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="5"/>
+            <column name="date" value="2018.05.03"/>
+            <column name="event_id" value="2"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="4"/>
+            <column name="hours" value="6"/>
+        </insert>
+        <insert tableName="working_day">
+            <column name="id" value="6"/>
+            <column name="date" value="2018.05.06"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="3"/>
+            <column name="employee_id" value="5"/>
+            <column name="hours" value="8"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="10" author="javaNine">
+        <insert tableName="settlement_sheet">
+            <column name="id" value="1"/>
+            <column name="employee_id" value="1"/>
+            <column name="year" value="2018"/>
+            <column name="month" value="5"/>
+            <column name="working_hours" value="160"/>
+            <column name="hospital_hours" value="16"/>
+            <column name="holiday_hours" value="64"/>
+            <column name="salary" value="6000"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
