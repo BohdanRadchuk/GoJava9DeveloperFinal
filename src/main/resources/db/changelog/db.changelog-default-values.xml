@@ -298,6 +298,7 @@
         </insert>
     </changeSet>
 
+    <!-- Settlement sheet -->
     <changeSet id="10" author="javaNine">
         <insert tableName="settlement_sheet">
             <column name="id" value="1"/>
