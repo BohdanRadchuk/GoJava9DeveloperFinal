@@ -1,7 +1,7 @@
 package com.javanine.finalProject;
 
 import com.javanine.finalProject.model.User;
-import com.javanine.finalProject.service.UserServiceImpl;
+import com.javanine.finalProject.service.impl.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,9 +24,9 @@ public class UserTests {
 
         user.setPassword("pass");
 
-        userServiceImpl.saveUser(user);
+        userServiceImpl.save(user);
 
-        User obtained = userServiceImpl.findUserByEmail("test_user");
+        User obtained = userServiceImpl.findByEmail("test_user");
 
         Assert.assertNotNull(obtained);
         Assert.assertEquals(user.getEmail(), obtained.getEmail());
