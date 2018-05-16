@@ -34,10 +34,10 @@
                     <c:forEach var="department" items="${departments}">
                         <tr>
                             <td><c:out value="${department.name}"/></td>
-                            <td><a href="${contextPath}/edit-department-${department.id}">Edit</a></td>
-                            <td><a href="${contextPath}/delete-department-${department.id}">Delete</a></td>
                             <td><a href="${contextPath}/department-positions-${department.id}">Positions</a></td>
                             <td><a href="${contextPath}/department-employees-${department.id}">Employees</a></td>
+                            <td><a href="${contextPath}/edit-department-${department.id}">Edit</a></td>
+                            <td><a href="${contextPath}/delete-department-${department.id}">Delete</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
