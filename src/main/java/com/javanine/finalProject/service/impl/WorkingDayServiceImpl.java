@@ -20,9 +20,7 @@ public class WorkingDayServiceImpl implements WorkingDayService {
 
     @Override
     public WorkingDay findById(Long id) {
-        if (workingDayRepository.findById(id).isPresent())
-            return workingDayRepository.findById(id).get();
-        else return null;
+       return workingDayRepository.getOne(id);
     }
 
     @Override
@@ -32,15 +30,13 @@ public class WorkingDayServiceImpl implements WorkingDayService {
 
     @Override
     public void update(WorkingDay workingDay) {
-
+        workingDayRepository.save(workingDay);
     }
 
     @Override
     public void deleteById(Long id) {
         workingDayRepository.deleteById(id);
     }
-
-
 
     @Override
     public List<WorkingDay> findByEmployee(Employee employee, int year, int month) {

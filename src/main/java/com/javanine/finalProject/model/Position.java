@@ -2,7 +2,7 @@ package com.javanine.finalProject.model;
 
 import lombok.Data;
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "position")
@@ -20,7 +20,7 @@ public class Position {
     private Department department;
 
     @OneToMany(mappedBy="position", cascade = CascadeType.ALL)
-    private Set<Employee> employees;
+    private List<Employee> employees;
 
     @Override
     public String toString() {

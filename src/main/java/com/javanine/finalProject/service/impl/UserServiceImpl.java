@@ -1,17 +1,15 @@
 package com.javanine.finalProject.service.impl;
 
-import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.Role;
 import com.javanine.finalProject.model.User;
-import com.javanine.finalProject.repository.EmployeeRepository;
 import com.javanine.finalProject.repository.RoleRepository;
 import com.javanine.finalProject.repository.UserRepository;
 import com.javanine.finalProject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -22,18 +20,7 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
 
     @Autowired
-    private EmployeeRepository employeeRepository;
-
-   /* @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;*/      //password encoding
-
-
-
-    @Override
-    public void save(User user) {
-        //user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
-    }
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public User findByEmail(String email) {
@@ -41,17 +28,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Role> findAllRoles() {
-        return roleRepository.findAll();
+    public List<Role> findAllRoles(Long id) {
+        User user = userRepository.getOne(id);
+        return user.getRoles();
     }
 
-
+    @Override
+    public void save(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        List<Role> roles = new ArrayList<>();
+        roles.add(roleRepository.findByRoleName("ROLE_EMPLOYEE"));
+        user.setRoles(roles);
+        userRepository.save(user);
+    }
 
     @Override
     public User findById(Long id) {
-        if (userRepository.findById(id).isPresent())
-            return userRepository.findById(id).get();
-        else return null;
+        return userRepository.getOne(id);
     }
 
     @Override
@@ -61,12 +54,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) {
-
+        userRepository.save(user);
     }
 
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
     }
-
 }

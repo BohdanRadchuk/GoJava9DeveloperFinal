@@ -3,7 +3,7 @@ package com.javanine.finalProject.model;
 import com.javanine.finalProject.model.enums.UserRole;
 import lombok.Data;
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "role")
@@ -17,7 +17,7 @@ public class Role {
     private UserRole roleName;
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
-    private Set<User> users;
+    private List<User> users;
 
     @Override
     public String toString() {

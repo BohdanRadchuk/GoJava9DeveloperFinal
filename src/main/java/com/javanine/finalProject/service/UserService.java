@@ -7,5 +7,5 @@ import java.util.List;
 public interface UserService extends ModelService<User, Long> {
     User findByEmail(String email);
 
-    List<Role> findAllRoles();
+    List<Role> findAllRoles(Long id);
 }

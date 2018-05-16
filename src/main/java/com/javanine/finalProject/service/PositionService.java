@@ -7,5 +7,5 @@ import java.util.List;
 public interface PositionService extends ModelService<Position, Long> {
     Position findByName(String name);
 
-    List<Employee> findAllEmployees();
+    List<Employee> findAllEmployees(Long id);
 }
