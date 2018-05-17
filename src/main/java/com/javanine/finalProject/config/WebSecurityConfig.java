@@ -14,7 +14,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/resources/**", "/list-departments").permitAll()
+                .antMatchers("/", "/index", "/resources/**", "/list-departments",
+                "/department-positions*", "/department-employees",
+                        "/department-employees*", "/new-department",
+                        "/edit-department*", "/delete-department*",
+                "/add-position-to-department*", "/delete-department-position-*/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

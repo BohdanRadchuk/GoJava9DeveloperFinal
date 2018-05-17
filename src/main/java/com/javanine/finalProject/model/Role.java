@@ -14,6 +14,7 @@ public class Role {
     private Long id;
 
     @Column(name = "name")
+    @Enumerated(EnumType.STRING)
     private UserRole roleName;
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)

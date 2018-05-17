@@ -13,6 +13,7 @@ public class Status {
     private Long id;
 
     @Column(name = "name")
+    @Enumerated(EnumType.STRING)
     private EmployeeStatus statusName;
 
     @Override
