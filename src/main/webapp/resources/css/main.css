@@ -1,0 +1,139 @@
+body {
+    background: url("/resources/images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.block-presentation {
+    margin: 30px 235px 20px 235px;
+    padding: 0 15px;
+}
+
+.block-presentation h1, .block-presentation p, .block-presentation h3, .page-title {
+    color: #ffffff;
+    text-align: center;
+}
+
+.block-presentation p {
+    font-size: 16px;
+}
+
+.block-lg {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.block-form, .action, .error, .action h3, .block-table {
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+}
+
+.block-form {
+    margin: 0 350px;
+}
+
+.block-table {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 0;
+}
+
+.action {
+    width: 275px;
+    font-size: 17px;
+    text-align: center;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.action h3 {
+    color: #080808;
+    background: #7bcc70;
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.btn-block {
+    text-align: center;
+}
+
+.btn {
+    font-size: 18px;
+    line-height: 1.3333333;
+    color: #ffffff;
+    padding: 5px 50px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.btn-r {
+    background: #ff4d4d;
+}
+
+.btn-r:hover {
+    color: #ffffff;
+    background: #d93033;
+}
+
+.btn-g {
+    background: #7bcc70;
+}
+
+.btn-g:hover {
+    color: #ffffff;
+    background: #63ab62;
+}
+
+.form-container {
+    padding: 10px 40px;
+    text-align: center;
+}
+
+.form-container .form-control {
+    color: #080808;
+    height: 36px;
+    margin-bottom: 10px;
+    -moz-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.form-container .field-name {
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.error {
+    font-size: 16px;
+    background: #7bcc70;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.auth-bar {
+    font-size: 16px;
+    text-align: right;
+    margin: 15px;
+}
+
+.auth-bar span {
+    color: #080808;
+    margin-right: 10px;
+}
+
+.auth-bar .btn-r {
+    padding: 5px 10px;
+}

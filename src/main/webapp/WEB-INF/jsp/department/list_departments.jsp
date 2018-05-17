@@ -10,12 +10,14 @@
     <meta content="text/html; charset=UTF-8">
     <title>Departments</title>
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/main.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
+    <%@include file="/WEB-INF/jsp/secure/auth_header.jsp" %>
     <div class="container">
         <h3 class="page-title">List of all departments</h3>
         <div class="block block-table">
