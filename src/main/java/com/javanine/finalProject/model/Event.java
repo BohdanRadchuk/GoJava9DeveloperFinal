@@ -13,6 +13,7 @@ public class Event {
     private Long id;
 
     @Column(name="name")
+    @Enumerated(EnumType.STRING)
     private EmployeeEvent eventName;
 
     @Override

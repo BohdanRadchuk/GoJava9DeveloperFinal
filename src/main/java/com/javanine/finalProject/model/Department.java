@@ -2,7 +2,7 @@ package com.javanine.finalProject.model;
 
 import lombok.Data;
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "department")
@@ -16,10 +16,10 @@ public class Department {
     private String name;
 
     @OneToMany(mappedBy="department", cascade = CascadeType.ALL)
-    private Set<Position> positions;
+    private List<Position> positions;
 
     @OneToMany(mappedBy="department", cascade = CascadeType.ALL)
-    private Set<Employee> employees;
+    private List<Employee> employees;
 
     @Override
     public String toString() {
