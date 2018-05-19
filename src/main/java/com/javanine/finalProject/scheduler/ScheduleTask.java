@@ -3,7 +3,6 @@ package com.javanine.finalProject.scheduler;
 import com.javanine.finalProject.service.impl.EmailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -14,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class ScheduleTask {
     @Autowired
     private EmailServiceImpl emailService;
+
 /*          //testing
     @Scheduled(fixedDelay = 1000)
     public void scheduleFixedDelayTask() {
@@ -31,5 +31,4 @@ public class ScheduleTask {
         //TODO Расчет и запись ЗП в базу данных
         //TODO Рассылка сообщений
     }
-
 }
