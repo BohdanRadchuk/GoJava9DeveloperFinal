@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationEn
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String REALM = "REALM";
 
     @Autowired

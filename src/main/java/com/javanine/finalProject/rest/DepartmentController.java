@@ -1,4 +1,4 @@
-package com.javanine.finalProject.controller;
+package com.javanine.finalProject.rest;
 
 
 import com.javanine.finalProject.service.impl.DepartmentServiceImpl;
