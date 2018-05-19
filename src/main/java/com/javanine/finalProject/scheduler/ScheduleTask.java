@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class ScheduleTask {
     @Autowired
     private EmailServiceImpl emailService;
-    
+
 /*          //testing
     @Scheduled(fixedDelay = 1000)
     public void scheduleFixedDelayTask() {

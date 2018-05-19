@@ -1,4 +1,4 @@
-package com.javanine.finalProject.config;
+package com.javanine.finalProject.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class CustomBasicAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
+    private static final String REALM = "REALM";
+
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authEx)
             throws IOException, ServletException {
@@ -20,7 +22,7 @@ public class CustomBasicAuthenticationEntryPoint extends BasicAuthenticationEntr
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        setRealmName("JAVA_NINE");
+        setRealmName(REALM);
         super.afterPropertiesSet();
     }
 }
