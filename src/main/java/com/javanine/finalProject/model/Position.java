@@ -19,8 +19,8 @@ public class Position {
     @JoinColumn(name="department_id", nullable=false)
     private Department department;
 
-    @OneToMany(mappedBy="position", cascade = CascadeType.ALL)
-    private List<Employee> employees;
+    @OneToOne(mappedBy = "position")
+    private Employee employee;
 
     @Override
     public String toString() {

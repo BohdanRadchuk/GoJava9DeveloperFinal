@@ -1,6 +1,5 @@
 package com.javanine.finalProject.service.impl;
 
-import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.Position;
 import com.javanine.finalProject.repository.PositionRepository;
 import com.javanine.finalProject.service.PositionService;
@@ -16,12 +15,6 @@ public class PositionServiceImpl implements PositionService {
     @Override
     public Position findByName(String name) {
         return positionRepository.findByName(name);
-    }
-
-    @Override
-    public List<Employee> findAllEmployees(Long id) {
-        Position position = positionRepository.getOne(id);
-        return position.getEmployees();
     }
 
     @Override
