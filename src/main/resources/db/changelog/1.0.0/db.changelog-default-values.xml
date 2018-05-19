@@ -26,12 +26,14 @@
         <insert tableName="user">
             <column name="id" value="1"/>
             <column name="email" value="johnSmith@gmail.com"/>
-            <column name="password" value="john12345"/>
+            <column name="password" value="$2a$10$6G2sOPe41b7Ff4eRTzGjROFHMd0YkqLORlCTlPirIqbz0z2WhIBXa"/>
+            <!-- password - john12345 -->
         </insert>
         <insert tableName="user">
             <column name="id" value="2"/>
             <column name="email" value="sarahJones@gmail.com"/>
-            <column name="password" value="sarah12345"/>
+            <column name="password" value="$2a$10$tPSFhwFqdevbKpHZaLYeY.eeDPQD6oCj5ZbvN1pICw/3rY.54tRCG"/>
+            <!-- password - sarah12345 -->
         </insert>
         <insert tableName="user">
             <column name="id" value="3"/>
