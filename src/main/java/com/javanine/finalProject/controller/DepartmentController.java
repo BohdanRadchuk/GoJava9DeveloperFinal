@@ -19,7 +19,7 @@ import java.util.Random;
 
 @Controller
 public class DepartmentController {
-    @Autowired
+   /* @Autowired
     private DepartmentServiceImpl departmentService;
 
     @Autowired
@@ -141,5 +141,5 @@ public class DepartmentController {
         model.addAttribute("edit", edit);
         //model.addAttribute("loggedUser", );
         return pageName;
-    }
+    }*/
 }

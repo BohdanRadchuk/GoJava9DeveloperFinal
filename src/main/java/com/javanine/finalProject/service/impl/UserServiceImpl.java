@@ -6,7 +6,7 @@ import com.javanine.finalProject.repository.RoleRepository;
 import com.javanine.finalProject.repository.UserRepository;
 import com.javanine.finalProject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleRepository roleRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+  /*  @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;*/
 
     @Override
     public User findByEmail(String email) {
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        //user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         List<Role> roles = new ArrayList<>();
         roles.add(roleRepository.findByRoleName("ROLE_EMPLOYEE"));
         user.setRoles(roles);

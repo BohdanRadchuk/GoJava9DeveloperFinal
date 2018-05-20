@@ -1,5 +1,6 @@
 package com.javanine.finalProject.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 public class SettlementSheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(notes = "The database generated product ID")
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)

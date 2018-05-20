@@ -39,14 +39,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
+	<!--	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<!-- Test -->
 		<dependency>
@@ -54,11 +54,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+	<!--	<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 
 		<!-- Servlet API -->
 		<dependency>
@@ -96,6 +96,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 			<version>1.4.3.RELEASE</version>
+		</dependency>
 
 		<!-- Lombok plugin -->
 		<dependency>
@@ -124,7 +125,20 @@
 			<version>6.14.3</version>
 			<scope>test</scope>
 		</dependency>
-    </dependencies>
+
+		<!-- Swagger -->
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+	</dependencies>
 
     <build>
 	    <plugins>

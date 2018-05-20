@@ -1,6 +1,7 @@
 package com.javanine.finalProject.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
@@ -11,17 +12,18 @@ import java.util.Date;
 public class WorkingDay {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(notes = "The database generated product ID")
     private Long id;
 
     @JsonFormat(pattern="yyyy-MM-dd")
     @Column(name = "date")
     private Date date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="event_id", nullable=false)
     private Event event;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="status_id", nullable=false)
     private Status status;
 

@@ -1,6 +1,9 @@
 package com.javanine.finalProject;
 
+import com.javanine.finalProject.model.Status;
 import com.javanine.finalProject.model.User;
+import com.javanine.finalProject.model.enums.EmployeeStatus;
+import com.javanine.finalProject.service.impl.StatusServiceImpl;
 import com.javanine.finalProject.service.impl.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,6 +19,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserTests {
     @Autowired
     private UserServiceImpl userServiceImpl;
+    @Autowired
+    private StatusServiceImpl statusServiceImpl;
 
     @Test
     public void testSaveGetUser() {
@@ -30,5 +35,14 @@ public class UserTests {
 
         Assert.assertNotNull(obtained);
         Assert.assertEquals(user.getEmail(), obtained.getEmail());
+    }
+
+    @Test
+    public void testSaveStatus (){
+    Status status = new Status();
+        status.setId(4l);
+        status.setStatusName(EmployeeStatus.HOLIDAY);
+
+        statusServiceImpl.save(status);
     }
 }

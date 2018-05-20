@@ -1,6 +1,7 @@
 package com.javanine.finalProject.service.impl;
 
 import com.javanine.finalProject.model.Status;
+import com.javanine.finalProject.model.enums.EmployeeStatus;
 import com.javanine.finalProject.repository.StatusRepository;
 import com.javanine.finalProject.service.StatusService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,4 +37,6 @@ public class StatusServiceImpl implements StatusService {
     public void deleteById(Long id) {
         statusRepository.deleteById(id);
     }
+
+
 }

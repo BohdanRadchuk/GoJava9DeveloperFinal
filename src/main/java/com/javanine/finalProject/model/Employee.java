@@ -1,12 +1,18 @@
 package com.javanine.finalProject.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "employee")
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
