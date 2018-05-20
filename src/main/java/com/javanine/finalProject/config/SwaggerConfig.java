@@ -17,23 +17,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurationSupport {
     @Bean
-    public Docket productApi() {
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.javanine.finalProject.rest"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(metaData());
+                .apiInfo(apiInfo());
     }
 
-    private ApiInfo metaData() {
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Spring Boot REST API")
                 .description("Spring Boot REST API for Managing Data on Company Employees")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("java_nine", "https://java_nine", "java_nine@gmail.com"))
+                .contact(new Contact("GoJava9", "https://GoJava9", "goJava9@gmail.com"))
                 .build();
     }
 
