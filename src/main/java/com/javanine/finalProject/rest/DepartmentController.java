@@ -28,29 +28,29 @@ import java.util.List;
 public class DepartmentController {
 
     @Autowired
-    DepartmentService departmentService;
+    private DepartmentService departmentService;
 
     @Autowired
-    DtoMapper mapper;
+    private DtoMapper mapper;
 
-//-------------------------------get ---------------------------------
 
-    @ApiOperation(value = "View department by ID", response = DepartmentReadDTO.class)
+    @ApiOperation(value = "Find department by ID", response = DepartmentReadDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved department"),
             @ApiResponse(code = 403, message = "Accessing the department by id you were trying to reach is forbidden")
     })
-    @GetMapping(value = "/{departmentId}")
+    @GetMapping(value = "/{id}")
 
-    public DepartmentReadDTO getDepartment(@ApiParam(value = "id of Department", required = true) @PathVariable Long departmentId) {
-        Department department =  departmentService.findById(departmentId);
+    public DepartmentReadDTO getById(@ApiParam(value = "id of Department", required = true) @PathVariable Long id) {
+        Department department =  departmentService.findById(id);
         if (department == null) {
-            String msg = String.format("There is no departments with id: %d", departmentId);
+            String msg = String.format("There is no departments with id: %d", id);
             throw new EntityNotFoundException(msg);
         }
-            return mapper.simpleFieldMap(department,DepartmentReadDTO.class);
+        return mapper.simpleFieldMap(department, DepartmentReadDTO.class);
     }
-//------------------------delete ---------------------------------
+
+
     @ApiOperation(value = "Delete department by ID", response = ResponseEntity.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Department successfully deleted"),
@@ -88,7 +88,7 @@ public class DepartmentController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-//---------------------------getAll --------------------------------
+    //---------------------------getAll --------------------------------
     @ApiOperation(value = "View a list of departments", response = DepartmentReadDTO.class, responseContainer="List")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list of existing departments"),
@@ -117,7 +117,7 @@ public class DepartmentController {
 
         if (dto == null) {
             throw new NullPointerException();
-                    //EntityNullException("department can't be null");
+            //EntityNullException("department can't be null");
         }
         Department department = mapper.map(dto,Department.class);
         departmentService.save(department);
@@ -126,7 +126,6 @@ public class DepartmentController {
 
 
 }
-
 
 
 

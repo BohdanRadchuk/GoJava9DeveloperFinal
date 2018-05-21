@@ -30,6 +30,4 @@ public class EmployeeReadDTO {
 
     @ApiModelProperty(position = 8)
     private PositionReadDTO position;
-
-
 }
