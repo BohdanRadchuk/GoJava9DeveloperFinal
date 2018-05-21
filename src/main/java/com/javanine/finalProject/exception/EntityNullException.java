@@ -1,4 +1,4 @@
-package com.javanine.finalProject.exeption;
+package com.javanine.finalProject.exception;
 
 /**
  * Handler exception

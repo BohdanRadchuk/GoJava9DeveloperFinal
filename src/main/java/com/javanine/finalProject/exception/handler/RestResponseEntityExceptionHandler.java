@@ -1,8 +1,8 @@
-package com.javanine.finalProject.exeption.handler;
+package com.javanine.finalProject.exception.handler;
 
-import com.javanine.finalProject.exeption.EntityAlreadyExistException;
-import com.javanine.finalProject.exeption.EntityConstraintException;
-import com.javanine.finalProject.exeption.EntityNullException;
+import com.javanine.finalProject.exception.EntityAlreadyExistException;
+import com.javanine.finalProject.exception.EntityConstraintException;
+import com.javanine.finalProject.exception.EntityNullException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

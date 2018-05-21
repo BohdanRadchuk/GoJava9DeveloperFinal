@@ -1,4 +1,4 @@
-package com.javanine.finalProject.exeption.handler;
+package com.javanine.finalProject.exception.handler;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
