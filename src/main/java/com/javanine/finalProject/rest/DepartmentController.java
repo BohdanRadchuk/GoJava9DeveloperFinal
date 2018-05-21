@@ -26,13 +26,11 @@ import java.util.List;
         @ApiResponse(code = 404, message = "The department you were trying to reach is not found"),
 })
 public class DepartmentController {
-
     @Autowired
     private DepartmentService departmentService;
 
     @Autowired
     private DtoMapper mapper;
-
 
     @ApiOperation(value = "Find department by ID", response = DepartmentReadDTO.class)
     @ApiResponses(value = {
@@ -40,7 +38,7 @@ public class DepartmentController {
             @ApiResponse(code = 403, message = "Accessing the department by id you were trying to reach is forbidden")
     })
     @GetMapping(value = "/{id}")
-
+    
     public DepartmentReadDTO getById(@ApiParam(value = "id of Department", required = true) @PathVariable Long id) {
         Department department =  departmentService.findById(id);
         if (department == null) {
@@ -49,7 +47,6 @@ public class DepartmentController {
         }
         return mapper.simpleFieldMap(department, DepartmentReadDTO.class);
     }
-
 
     @ApiOperation(value = "Delete department by ID", response = ResponseEntity.class)
     @ApiResponses(value = {
