@@ -1,10 +1,9 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoUpdate;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -18,7 +17,6 @@ import javax.validation.constraints.Size;
 @Setter
 @ApiModel
 public class UserUpdatePasswordDTO {
-
     @ApiModelProperty(required = true, position = 1)
     @NotNull
     private String oldPassword;

@@ -1,11 +1,9 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoRead;
 
-import com.javanine.finalProject.model.Employee;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -16,7 +14,6 @@ import java.util.List;
 @Setter
 @ApiModel
 public class DepartmentReadDTO {
-
     @ApiModelProperty(position = 1)
     private Long id;
 

@@ -1,10 +1,9 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoCreate;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.validation.constraints.NotNull;
 
 /**
@@ -15,7 +14,6 @@ import javax.validation.constraints.NotNull;
 @Setter
 @ApiModel
 public class EmployeeChangeRoleDTO {
-
     @ApiModelProperty(position = 1)
     @NotNull(message = "employee Id must be not null")
     private Long employeeId;

@@ -1,27 +1,24 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoUpdate;
 
 import com.javanine.finalProject.mapper.Entity;
 import com.javanine.finalProject.model.Department;
-import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.Position;
 import com.javanine.finalProject.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * The {@link EmployeeUpdateDTO} to update a {@link com.javanine.finalProject.model.Employee} entity by Rest Controller.
  */
+
 @Getter
 @Setter
 @ApiModel
 public class EmployeeUpdateDTO {
-
     @ApiModelProperty(position = 1)
     @NotNull(message = "first name must be not null")
     private String firstName;
@@ -29,7 +26,6 @@ public class EmployeeUpdateDTO {
     @ApiModelProperty(position = 2)
     @NotNull(message = "last name must be not null")
     private String lastName;
-
 
     @Entity(Department.class)
     @ApiModelProperty(required = true, position = 4)
@@ -49,5 +45,4 @@ public class EmployeeUpdateDTO {
     @ApiModelProperty(required = true, position = 6)
     @NotNull(message = "startWorkingDate must be not null")
     private BigDecimal hourlyRate;
-
 }

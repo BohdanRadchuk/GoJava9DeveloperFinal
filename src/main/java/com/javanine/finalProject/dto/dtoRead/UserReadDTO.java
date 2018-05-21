@@ -1,12 +1,10 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoRead;
 
 import com.javanine.finalProject.model.Role;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 /**
  * The {@link UserReadDTO} to read a {@link com.javanine.finalProject.model.User} entity by Rest Controller.
@@ -15,9 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @ApiModel
-
 public class UserReadDTO {
-
     @ApiModelProperty(position = 1)
     private Long id;
 
@@ -26,5 +22,4 @@ public class UserReadDTO {
 
     @ApiModelProperty(position = 3)
     private Role role;
-
 }

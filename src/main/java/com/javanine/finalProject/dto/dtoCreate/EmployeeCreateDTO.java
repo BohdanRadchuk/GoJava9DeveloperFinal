@@ -1,27 +1,24 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoCreate;
 
 import com.javanine.finalProject.mapper.Entity;
 import com.javanine.finalProject.model.Department;
-import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.Position;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
-
 /**
  * The {@link EmployeeCreateDTO} to create a {@link com.javanine.finalProject.model.Employee} entity by Rest Controller.
  */
+
 @Getter
 @Setter
 @ApiModel
 public class EmployeeCreateDTO {
-
     @ApiModelProperty(required = true, position = 1)
     @NotNull(message = "firstName must be not null")
     private String firstName;
@@ -48,5 +45,4 @@ public class EmployeeCreateDTO {
     @ApiModelProperty(required = true, position = 6)
     @NotNull(message = "startWorkingDate must be not null")
     private BigDecimal hourlyRate;
-
 }

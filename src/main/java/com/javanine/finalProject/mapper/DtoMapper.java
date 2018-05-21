@@ -1,27 +1,10 @@
 package com.javanine.finalProject.mapper;
-/*import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Component;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityNotFoundException;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;*/
-
 
 import lombok.extern.slf4j.Slf4j;
-//import org.jetbrains.annotations.Nullable;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Id;
@@ -29,7 +12,6 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
-
 import static org.springframework.util.ReflectionUtils.*;
 
 /**
@@ -39,7 +21,6 @@ import static org.springframework.util.ReflectionUtils.*;
 @Component
 @Slf4j
 public class DtoMapper {
-
     /**
      * The library for map in models
      */
@@ -113,7 +94,6 @@ public class DtoMapper {
                 .collect(Collectors.toCollection(() -> new ArrayList(source.size())));
         return list;
     }
-
 
    // @Nullable
     private Object getDtoId(Object source, Set<Field> fields) {
@@ -217,5 +197,4 @@ public class DtoMapper {
         }
         return fields;
     }
-
 }

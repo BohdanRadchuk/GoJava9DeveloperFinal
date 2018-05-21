@@ -1,11 +1,10 @@
-package com.javanine.finalProject.dto;
+package com.javanine.finalProject.dto.dtoUpdate;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Email;
-
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 
@@ -18,7 +17,6 @@ import javax.validation.constraints.NotNull;
 @Setter
 @ApiModel
 public class UserUpdateEmailDTO {
-
     @ApiModelProperty(required = true, position = 1)
     @NotNull(message = "email must be not null")
     private String old_email;
@@ -36,6 +34,4 @@ public class UserUpdateEmailDTO {
     private boolean isEmailsMatches() {
         return email.equals(confirmEmail);
     }
-
-
 }

@@ -1,13 +1,9 @@
-package com.javanine.finalProject.dto;
-
+package com.javanine.finalProject.dto.dtoRead;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
-
 
 /**
  * The {@link EmployeeReadDTO} to read a {@link com.javanine.finalProject.model.Employee} entity by Rest Controller.
@@ -16,9 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ApiModel
-
 public class EmployeeReadDTO {
-
     @ApiModelProperty(position = 1)
     private Long id;
 

@@ -1,11 +1,10 @@
 package com.javanine.finalProject.rest;
 
-import com.javanine.finalProject.dto.DepartmentCreateDTO;
-import com.javanine.finalProject.dto.DepartmentReadDTO;
+import com.javanine.finalProject.dto.dtoCreate.DepartmentCreateDTO;
+import com.javanine.finalProject.dto.dtoRead.DepartmentReadDTO;
 import com.javanine.finalProject.mapper.DtoMapper;
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.service.DepartmentService;
-import com.javanine.finalProject.service.ModelService;
 import io.swagger.annotations.*;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 package com.javanine.finalProject.rest;
 
-import com.javanine.finalProject.dto.EmployeeCreateDTO;
-import com.javanine.finalProject.dto.EmployeeReadDTO;
-import com.javanine.finalProject.dto.EmployeeUpdateDTO;
+import com.javanine.finalProject.dto.dtoCreate.EmployeeCreateDTO;
+import com.javanine.finalProject.dto.dtoRead.EmployeeReadDTO;
+import com.javanine.finalProject.dto.dtoUpdate.EmployeeUpdateDTO;
 import com.javanine.finalProject.mapper.DtoMapper;
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.User;
