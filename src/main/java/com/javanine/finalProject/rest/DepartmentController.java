@@ -6,14 +6,12 @@ import com.javanine.finalProject.mapper.DtoMapper;
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.service.DepartmentService;
 import io.swagger.annotations.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
-
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
@@ -27,7 +25,6 @@ import java.util.List;
         @ApiResponse(code = 401, message = "You are not authorized to do this action"),
         @ApiResponse(code = 404, message = "The department you were trying to reach is not found"),
 })
-
 public class DepartmentController {
 
     @Autowired

@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 public class StatusCreateDTO {
     @ApiModelProperty(position = 1)
     @NotNull(message = "This field must be NOT NULL")
-    @Pattern(regexp = RegexpPatterns.patternStringWithNumbersLettersAndDash,
-            message = RegexpPatterns.messageStringWithNumbersLettersAndDash)
+    @Pattern(regexp = RegexpPatterns.PATTERN_STRING_WITH_NUMBERS_LETTERS_AND_DASH,
+            message = RegexpPatterns.MESSAGE_STRING_WITH_NUMBERS_LETTERS_AND_DASH)
     private String name;
 }
