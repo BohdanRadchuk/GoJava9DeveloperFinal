@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import java.math.BigDecimal;
 
 @Configuration
 @PropertySource("classpath:payment.properties")
@@ -12,4 +13,6 @@ import org.springframework.context.annotation.PropertySource;
 @Data
 @NoArgsConstructor
 public class EventTypeCoefficientProperties {
+    private BigDecimal workingDay;
+    private BigDecimal technicalStudies;
 }
