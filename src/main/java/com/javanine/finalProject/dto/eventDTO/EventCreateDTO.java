@@ -1,4 +1,4 @@
-package com.javanine.finalProject.dto.dtoCreate;
+package com.javanine.finalProject.dto.eventDTO;
 
 import com.javanine.finalProject.validator.RegexpPatterns;
 import io.swagger.annotations.ApiModel;

@@ -1,4 +1,4 @@
-package com.javanine.finalProject.dto.dtoRead;
+package com.javanine.finalProject.dto.userDTO;
 
 import com.javanine.finalProject.model.Role;
 import io.swagger.annotations.ApiModel;

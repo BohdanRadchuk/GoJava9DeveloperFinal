@@ -1,4 +1,4 @@
-package com.javanine.finalProject.dto.dtoUpdate;
+package com.javanine.finalProject.dto.userDTO;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

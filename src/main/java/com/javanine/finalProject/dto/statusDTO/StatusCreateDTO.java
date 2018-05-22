@@ -1,4 +1,4 @@
-package com.javanine.finalProject.dto.dtoCreate;
+package com.javanine.finalProject.dto.statusDTO;
 
 import com.javanine.finalProject.validator.RegexpPatterns;
 import io.swagger.annotations.ApiModel;
@@ -9,16 +9,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 /**
- * The {@link DepartmentCreateDTO} to create a {@link com.javanine.finalProject.model.Department} entity by Rest Controller.
+ * The {@link StatusCreateDTO} to create a {@link com.javanine.finalProject.model.Status} entity by Rest Controller.
  */
 
 @Getter
 @Setter
 @ApiModel
-public class DepartmentCreateDTO {
+public class StatusCreateDTO {
     @ApiModelProperty(position = 1)
+    @NotNull(message = "This field must be NOT NULL")
     @Pattern(regexp = RegexpPatterns.PATTERN_STRING_WITH_NUMBERS_LETTERS_AND_DASH,
             message = RegexpPatterns.MESSAGE_STRING_WITH_NUMBERS_LETTERS_AND_DASH)
-    @NotNull(message = "name must be not null")
     private String name;
 }

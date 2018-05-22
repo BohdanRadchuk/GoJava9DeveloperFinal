@@ -1,4 +1,4 @@
-package com.javanine.finalProject.dto.dtoCreate;
+package com.javanine.finalProject.dto.positionDTO;
 
 import com.javanine.finalProject.mapper.Entity;
 import com.javanine.finalProject.model.Department;

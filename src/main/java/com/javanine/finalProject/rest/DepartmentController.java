@@ -1,7 +1,7 @@
 package com.javanine.finalProject.rest;
 
-import com.javanine.finalProject.dto.dtoCreate.DepartmentCreateDTO;
-import com.javanine.finalProject.dto.dtoRead.DepartmentReadDTO;
+import com.javanine.finalProject.dto.departmentDTO.DepartmentCreateDTO;
+import com.javanine.finalProject.dto.departmentDTO.DepartmentReadDTO;
 import com.javanine.finalProject.mapper.DtoMapper;
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.service.DepartmentService;
@@ -37,8 +37,8 @@ public class DepartmentController {
             @ApiResponse(code = 200, message = "Successfully retrieved department"),
             @ApiResponse(code = 403, message = "Accessing the department by id you were trying to reach is forbidden")
     })
-    @GetMapping(value = "/{id}")
-    
+    @GetMapping(value = "/{id}", produces = "application/json")
+
     public DepartmentReadDTO getById(@ApiParam(value = "id of Department", required = true) @PathVariable Long id) {
         Department department =  departmentService.findById(id);
         if (department == null) {

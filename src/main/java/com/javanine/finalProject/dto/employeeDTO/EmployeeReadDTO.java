@@ -1,5 +1,8 @@
-package com.javanine.finalProject.dto.dtoRead;
+package com.javanine.finalProject.dto.employeeDTO;
 
+import com.javanine.finalProject.dto.departmentDTO.DepartmentReadDTO;
+import com.javanine.finalProject.dto.positionDTO.PositionReadDTO;
+import com.javanine.finalProject.dto.userDTO.UserReadDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
