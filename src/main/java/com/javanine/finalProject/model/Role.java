@@ -1,13 +1,16 @@
 package com.javanine.finalProject.model;
 
 import com.javanine.finalProject.model.enums.UserRole;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import javax.persistence.*;
-import java.util.List;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "role")
-@Data
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,16 +19,5 @@ public class Role {
     @Column(name = "name")
     @Enumerated(EnumType.STRING)
     private UserRole roleName;
-
-    @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
-    private List<User> users;
-
-    @Override
-    public String toString() {
-        return "Role{" +
-                "id=" + id +
-                ", name='" + roleName + '\'' +
-                '}';
-    }
 }
 

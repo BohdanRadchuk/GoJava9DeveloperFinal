@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.EmployeeDTO;
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.repository.EmployeeRepository;
 import com.javanine.finalProject.service.EmployeeService;
@@ -35,5 +36,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);
+    }
+
+    @Override
+    public EmployeeDTO findDto(Long id) {
+        return employeeRepository.findDto(id);
     }
 }

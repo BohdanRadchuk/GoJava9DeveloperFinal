@@ -1,12 +1,17 @@
 package com.javanine.finalProject.model;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import javax.persistence.*;
-import java.util.List;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "position")
-@Data
+@EqualsAndHashCode(exclude = {"department"})
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,12 +26,4 @@ public class Position {
 
     @OneToOne(mappedBy = "position")
     private Employee employee;
-
-    @Override
-    public String toString() {
-        return "Position{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

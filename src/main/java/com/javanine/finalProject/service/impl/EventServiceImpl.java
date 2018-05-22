@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.EventDTO;
 import com.javanine.finalProject.model.Event;
 import com.javanine.finalProject.repository.EventRepository;
 import com.javanine.finalProject.service.EventService;
@@ -40,5 +41,10 @@ public class EventServiceImpl implements EventService {
     @Override
     public void deleteById(Long id) {
         eventRepository.deleteById(id);
+    }
+
+    @Override
+    public EventDTO findDto(Long id) {
+       return eventRepository.findDto(id);
     }
 }

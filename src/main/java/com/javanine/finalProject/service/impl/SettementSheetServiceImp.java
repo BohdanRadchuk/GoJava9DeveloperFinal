@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.SettlementSheetDTO;
 import com.javanine.finalProject.model.SettlementSheet;
 import com.javanine.finalProject.repository.SettlementSheetRepository;
 import com.javanine.finalProject.service.SettlementSheetService;
@@ -35,5 +36,10 @@ public class SettementSheetServiceImp implements SettlementSheetService {
     @Override
     public void deleteById(Long id) {
         settlementSheetRepository.deleteById(id);
+    }
+
+    @Override
+    public SettlementSheetDTO findDto(Long id) {
+        return settlementSheetRepository.findDto(id);
     }
 }

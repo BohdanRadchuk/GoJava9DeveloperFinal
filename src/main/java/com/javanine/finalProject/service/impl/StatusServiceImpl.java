@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.StatusDTO;
 import com.javanine.finalProject.model.Status;
 import com.javanine.finalProject.repository.StatusRepository;
 import com.javanine.finalProject.service.StatusService;
@@ -35,5 +36,10 @@ public class StatusServiceImpl implements StatusService {
     @Override
     public void deleteById(Long id) {
         statusRepository.deleteById(id);
+    }
+
+    @Override
+    public StatusDTO findDto(Long id) {
+        return statusRepository.findDto(id);
     }
 }

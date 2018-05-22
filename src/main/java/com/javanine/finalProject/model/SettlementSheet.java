@@ -1,12 +1,16 @@
 package com.javanine.finalProject.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "settlement_sheet")
-@Data
 public class SettlementSheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

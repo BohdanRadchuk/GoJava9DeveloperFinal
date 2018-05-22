@@ -1,12 +1,15 @@
 package com.javanine.finalProject.model;
 
 import com.javanine.finalProject.model.enums.EmployeeEvent;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import javax.persistence.*;
 
+@Getter
+@Setter
+@ToString
 @Entity
-@Table(name = "event")
-@Data
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,13 +18,5 @@ public class Event {
     @Column(name="name")
     @Enumerated(EnumType.STRING)
     private EmployeeEvent eventName;
-
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", name='" + eventName + '\'' +
-                '}';
-    }
 }
 

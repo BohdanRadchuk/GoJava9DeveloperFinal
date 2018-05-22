@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.DepartmentDTO;
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.Position;
@@ -54,5 +55,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void deleteById(Long id) {
         departmentRepository.deleteById(id);
+    }
+
+    @Override
+    public DepartmentDTO findDto(Long id) {
+        return departmentRepository.findDto(id);
     }
 }

@@ -1,7 +1,7 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.RoleDTO;
 import com.javanine.finalProject.model.Role;
-import com.javanine.finalProject.model.User;
 import com.javanine.finalProject.repository.RoleRepository;
 import com.javanine.finalProject.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,6 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public Role findByRoleName(String roleName) {
         return roleRepository.findByRoleName(roleName);
-    }
-
-    @Override
-    public List<User> findAllUsers(Long id) {
-        Role role = roleRepository.getOne(id);
-        return role.getUsers();
     }
 
     @Override
@@ -47,5 +41,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void deleteById(Long id) {
         roleRepository.deleteById(id);
+    }
+
+    @Override
+    public RoleDTO findDto(Long id) {
+        return roleRepository.findDto(id);
     }
 }

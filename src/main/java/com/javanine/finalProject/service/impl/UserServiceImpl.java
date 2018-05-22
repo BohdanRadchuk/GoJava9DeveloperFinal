@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.UserDTO;
 import com.javanine.finalProject.model.Role;
 import com.javanine.finalProject.model.User;
 import com.javanine.finalProject.repository.RoleRepository;
@@ -60,5 +61,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public UserDTO findDto(Long id) {
+        return userRepository.findDto(id);
     }
 }

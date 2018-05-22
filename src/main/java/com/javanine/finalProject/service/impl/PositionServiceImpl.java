@@ -1,5 +1,6 @@
 package com.javanine.finalProject.service.impl;
 
+import com.javanine.finalProject.dto.PositionDTO;
 import com.javanine.finalProject.model.Position;
 import com.javanine.finalProject.repository.PositionRepository;
 import com.javanine.finalProject.service.PositionService;
@@ -40,5 +41,10 @@ public class PositionServiceImpl implements PositionService {
     @Override
     public void deleteById(Long id) {
         positionRepository.deleteById(id);
+    }
+
+    @Override
+    public PositionDTO findDto(Long id) {
+        return positionRepository.findDto(id);
     }
 }
