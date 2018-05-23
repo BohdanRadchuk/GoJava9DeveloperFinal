@@ -5,41 +5,47 @@ import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.repository.EmployeeRepository;
 import com.javanine.finalProject.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+
+import static org.springframework.util.Assert.notNull;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
     @Override
-    public void save(Employee employee) {
-        employeeRepository.save(employee);
+    public EmployeeDTO save(Employee employee) {
+        notNull(employee, "employee is null");
+        final Employee saved = employeeRepository.save(employee);
+        return employeeRepository.findInId(saved.getId());
     }
 
     @Override
-    public Employee findById(Long id) {
-        return employeeRepository.getOne(id);
+    public List<EmployeeDTO> findAll(int page, int limit) {
+        return employeeRepository.findAllDto(PageRequest.of(page, limit));
     }
 
     @Override
-    public List<Employee> findAll() {
-        return employeeRepository.findAll();
-    }
-
-    @Override
-    public void update(Employee employee) {
-        employeeRepository.save(employee);
+    public EmployeeDTO update(Employee employee) {
+        notNull(employee, "employee is null");
+        final Employee saved = employeeRepository.saveAndFlush(employee);
+        return employeeRepository.findInId(saved.getId());
     }
 
     @Override
     public void deleteById(Long id) {
+        notNull(id, "id is null");
         employeeRepository.deleteById(id);
     }
 
     @Override
-    public EmployeeDTO findDto(Long id) {
-        return employeeRepository.findDto(id);
+    public EmployeeDTO findById(Long id) {
+        notNull(id, "id is null");
+        return employeeRepository.findInId(id);
     }
 }

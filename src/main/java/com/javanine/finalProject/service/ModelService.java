@@ -2,14 +2,15 @@ package com.javanine.finalProject.service;
 
 import java.util.List;
 
-public interface ModelService<T, ID> {
-    void save(T t);
+public interface ModelService<R, S, ID> {
 
-    T findById(ID id);
+    R save(S t);
 
-    List<T> findAll();
+    R findById(ID id);
 
-    void update(T t);
+    List<R> findAll(int page, int offset);
+
+    R update(S t);
 
     void deleteById(ID id);
 }

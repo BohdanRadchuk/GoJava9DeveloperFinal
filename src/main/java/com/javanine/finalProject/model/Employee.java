@@ -2,6 +2,7 @@ package com.javanine.finalProject.model;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -20,30 +21,15 @@ public class Employee {
     @Column(name = "last_name")
     private String lastName;
 
-    @ManyToOne
-    @JoinColumn(name="department_id", nullable=false)
-    private Department department;
+    @Column(name = "department_id")
+    private Long departmentId;
 
-    @ManyToOne
-    @JoinColumn(name="position_id", nullable=false)
-    private Position position;
+    @Column(name = "position_id")
+    private Long positionId;
 
     @Column(name = "hourly_rate")
     private BigDecimal hourlyRate;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", department=" + department.getName() +
-                ", position=" + position.getName() +
-                ", hourly rate=" + hourlyRate +
-                '}';
-    }
+    @Column(name = "user_id")
+    private Long userId;
 }

@@ -2,13 +2,12 @@ package com.javanine.finalProject.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "settlement_sheet")
 public class SettlementSheet {
@@ -16,9 +15,8 @@ public class SettlementSheet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id")
-    private Employee employee;
+    @Column(name = "employee_id")
+    private Long employeeId;
 
     @Column (name="year")
     private int year;

@@ -1,9 +1,9 @@
 package com.javanine.finalProject.model;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 import javax.persistence.*;
 
 @Getter
@@ -11,7 +11,6 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "position")
-@EqualsAndHashCode(exclude = {"department"})
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +19,6 @@ public class Position {
     @Column(name="name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name="department_id", nullable=false)
-    private Department department;
-
-    @OneToOne(mappedBy = "position")
-    private Employee employee;
+    @Column(name = "department_id")
+    private Long departmentId;
 }

@@ -1,4 +1,4 @@
-package com.javanine.finalProject;
+package com.javaNine.finalProject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,5 @@
 package com.javanine.finalProject.dto;
 
-import com.javanine.finalProject.model.Employee;
 import lombok.*;
 
 @Getter
@@ -11,6 +10,4 @@ import lombok.*;
 public class PositionDTO {
     private Long id;
     private String name;
-    private String department;
-    private Employee employee;
 }

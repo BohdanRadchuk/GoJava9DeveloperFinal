@@ -1,7 +1,8 @@
-package com.javanine.finalProject;
+package com.javaNine.finalProject;
 
+import com.javanine.finalProject.dto.UserDTO;
 import com.javanine.finalProject.model.User;
-import com.javanine.finalProject.service.impl.UserServiceImpl;
+import com.javanine.finalProject.service.UserService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 public class UserTests {
+
     @Autowired
-    private UserServiceImpl userServiceImpl;
+    private UserService userService;
 
     @Test
     public void testSaveGetUser() {
@@ -24,9 +26,9 @@ public class UserTests {
 
         user.setPassword("pass");
 
-        userServiceImpl.save(user);
+        userService.save(user);
 
-        User obtained = userServiceImpl.findByEmail("test_user");
+        UserDTO obtained = userService.findByEmail("test_user");
 
         Assert.assertNotNull(obtained);
         Assert.assertEquals(user.getEmail(), obtained.getEmail());

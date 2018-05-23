@@ -3,8 +3,7 @@ package com.javanine.finalProject.service;
 import com.javanine.finalProject.dto.EventDTO;
 import com.javanine.finalProject.model.Event;
 
-public interface EventService extends ModelService<Event, Long>{
-    Event findByEventName(String eventName);
+public interface EventService extends ModelService<EventDTO, Event, Long> {
 
-    EventDTO findDto(Long id);
+    EventDTO findByName(String eventName);
 }

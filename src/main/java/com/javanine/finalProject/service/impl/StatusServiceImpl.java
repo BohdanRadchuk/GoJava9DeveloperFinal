@@ -5,41 +5,47 @@ import com.javanine.finalProject.model.Status;
 import com.javanine.finalProject.repository.StatusRepository;
 import com.javanine.finalProject.service.StatusService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+
+import static org.springframework.util.Assert.notNull;
 
 @Service
 public class StatusServiceImpl implements StatusService {
+
     @Autowired
     private StatusRepository statusRepository;
 
     @Override
-    public void save(Status status) {
-        statusRepository.save(status);
+    public StatusDTO save(Status status) {
+        notNull(status, "status is null");
+        final Status saved = statusRepository.save(status);
+        return statusRepository.findInId(saved.getId());
     }
 
     @Override
-    public Status findById(Long id) {
-        return statusRepository.getOne(id);
+    public StatusDTO findById(Long id) {
+        notNull(id, "id is null");
+        return statusRepository.findInId(id);
     }
 
     @Override
-    public List<Status> findAll() {
-        return statusRepository.findAll();
+    public List<StatusDTO> findAll(int page, int limit) {
+        return statusRepository.findAllDto(PageRequest.of(page, limit));
     }
 
     @Override
-    public void update(Status status) {
-        statusRepository.save(status);
+    public StatusDTO update(Status status) {
+        notNull(status, "status is null");
+        final Status saved = statusRepository.saveAndFlush(status);
+        return statusRepository.findInId(saved.getId());
     }
 
     @Override
     public void deleteById(Long id) {
+        notNull(id, "id is null");
         statusRepository.deleteById(id);
-    }
-
-    @Override
-    public StatusDTO findDto(Long id) {
-        return statusRepository.findDto(id);
     }
 }
