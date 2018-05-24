@@ -1,6 +1,5 @@
 package com.javanine.finalProject.repository;
 
-
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.repository.DepartmentRepository;
 import org.junit.Assert;
@@ -17,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 public class DepartmentTests {
-
 
     /**
      * The repository's layer object
@@ -60,5 +58,4 @@ public class DepartmentTests {
         department.setName("Department 1");
         return department;
     }
-
 }

@@ -1,10 +1,7 @@
 package com.javanine.finalProject.repository;
 
-
-import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.model.Event;
 import com.javanine.finalProject.model.enums.EmployeeEvent;
-import com.javanine.finalProject.repository.EventRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 public class EventTests {
-
 
     /**
      * The repository's layer object
@@ -52,7 +48,6 @@ public class EventTests {
      */
     @Test(expected = InvalidDataAccessApiUsageException.class)
     public void sendNullId() {
-
         Long id = null;
         eventRepository.findById(id).get();
     }
@@ -62,5 +57,4 @@ public class EventTests {
         event.setEventName(EmployeeEvent.WORKING_DAY);
         return event;
     }
-
 }

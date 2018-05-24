@@ -1,6 +1,5 @@
 package com.javanine.finalProject;
 
-
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.repository.EmployeeRepository;
 import org.junit.Assert;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -30,7 +28,6 @@ public class EmployeeTests {
         Employee obtained = employeeRepository.findById(actual.getId()).get();
 
         Assert.assertEquals(actual, obtained);
-
     }
 
     @Test

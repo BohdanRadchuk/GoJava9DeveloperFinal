@@ -1,9 +1,7 @@
 package com.javanine.finalProject.repository;
 
-
 import com.javanine.finalProject.model.Role;
 import com.javanine.finalProject.model.enums.UserRole;
-import com.javanine.finalProject.repository.RoleRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 public class RoleTests {
-
 
     /**
      * The repository's layer object
