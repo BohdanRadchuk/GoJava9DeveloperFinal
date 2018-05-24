@@ -1,9 +1,9 @@
 package com.javanine.finalProject.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.*;
 /**
  * The class implements a set of methods for working
@@ -14,6 +14,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "position")
+@EqualsAndHashCode
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

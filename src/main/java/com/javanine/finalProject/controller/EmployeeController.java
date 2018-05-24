@@ -3,14 +3,17 @@ package com.javanine.finalProject.controller;
 import com.javanine.finalProject.dto.EmployeeDTO;
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.service.EmployeeService;
+import com.javanine.finalProject.util.RoleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/employee")
+@Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR})
 public class EmployeeController {
 
     @Autowired
@@ -44,6 +47,7 @@ public class EmployeeController {
      * @return employee {@link EmployeeDTO}
      */
     @GetMapping("/findOne")
+    @Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR, RoleUtil.ROLE_EMPLOYEE})
     public ResponseEntity<EmployeeDTO> findById(@RequestParam Long id) {
         final EmployeeDTO employeeDTO = employeeService.findById(id);
         return new ResponseEntity<>(employeeDTO, HttpStatus.OK);

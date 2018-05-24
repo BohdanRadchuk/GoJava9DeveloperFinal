@@ -3,15 +3,18 @@ package com.javanine.finalProject.controller;
 import com.javanine.finalProject.dto.SettlementSheetDTO;
 import com.javanine.finalProject.model.SettlementSheet;
 import com.javanine.finalProject.service.SettlementSheetService;
+import com.javanine.finalProject.util.RoleUtil;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/settlement-sheet")
+@Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR})
 public class SettlementSheetController {
 
     @Autowired

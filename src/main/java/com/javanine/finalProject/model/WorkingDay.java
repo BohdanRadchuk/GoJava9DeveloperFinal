@@ -1,10 +1,10 @@
 package com.javanine.finalProject.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.*;
 import java.util.Date;
 /**
@@ -16,6 +16,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "working_day")
+@EqualsAndHashCode
 public class WorkingDay {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

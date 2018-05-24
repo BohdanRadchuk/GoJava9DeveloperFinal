@@ -1,8 +1,9 @@
 package com.javanine.finalProject.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 /**
@@ -11,8 +12,10 @@ import java.math.BigDecimal;
  */
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "settlement_sheet")
+@EqualsAndHashCode
 public class SettlementSheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

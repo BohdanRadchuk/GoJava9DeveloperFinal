@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+
 @Slf4j
 @Service
 public class EmailServiceImpl implements EmailService {
+
     @Autowired
     public JavaMailSender emailSender;
 
