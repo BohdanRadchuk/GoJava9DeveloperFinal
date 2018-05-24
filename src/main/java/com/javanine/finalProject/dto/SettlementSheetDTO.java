@@ -3,7 +3,9 @@ package com.javanine.finalProject.dto;
 import com.javanine.finalProject.model.Employee;
 import lombok.*;
 import java.math.BigDecimal;
-
+/**
+ * The {@link SettlementSheetDTO} to read a {@link com.javanine.finalProject.model.SettlementSheet} entity by controller.
+ */
 @Getter
 @Setter
 @ToString

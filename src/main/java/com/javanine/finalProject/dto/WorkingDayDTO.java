@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-
+/**
+ * The {@link WorkingDayDTO} to read a {@link com.javanine.finalProject.model.WorkingDay} entity by controller.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
