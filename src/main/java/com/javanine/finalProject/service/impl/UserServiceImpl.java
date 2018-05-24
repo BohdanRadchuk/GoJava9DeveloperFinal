@@ -7,6 +7,7 @@ import com.javanine.finalProject.repository.RoleRepository;
 import com.javanine.finalProject.repository.UserRepository;
 import com.javanine.finalProject.service.UserService;
 import com.javanine.finalProject.util.RoleUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -17,7 +18,7 @@ import java.util.List;
 
 import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
-
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -44,17 +45,20 @@ public class UserServiceImpl implements UserService {
         roles.add(roleRepository.findByRoleName(RoleUtil.ROLE_EMPLOYEE));
         user.setRoles(roles);
         final User created = userRepository.save(user);
+        log.info("User created");
         return userRepository.findInId(created.getId());
     }
 
     @Override
     public UserDTO findById(Long id) {
         notNull(id, "id is null");
+        log.info("User found");
         return userRepository.findInId(id);
     }
 
     @Override
     public List<UserDTO> findAll(int page, int limit) {
+        log.info("Found all users");
         return userRepository.findAllDto(PageRequest.of(page, limit));
     }
 
@@ -62,12 +66,14 @@ public class UserServiceImpl implements UserService {
     public UserDTO update(User user) {
         notNull(user, "user is null");
         final User updated = userRepository.saveAndFlush(user);
+        log.info("User updated");
         return userRepository.findInId(updated.getId());
     }
 
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");
+        log.info("User deleted");
         userRepository.deleteById(id);
     }
 }
