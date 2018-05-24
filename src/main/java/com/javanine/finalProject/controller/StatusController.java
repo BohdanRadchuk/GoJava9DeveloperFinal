@@ -3,14 +3,17 @@ package com.javanine.finalProject.controller;
 import com.javanine.finalProject.dto.StatusDTO;
 import com.javanine.finalProject.model.Status;
 import com.javanine.finalProject.service.StatusService;
+import com.javanine.finalProject.util.RoleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/status")
+@Secured({RoleUtil.ROLE_ADMIN})
 public class StatusController {
 
     @Autowired
@@ -35,6 +38,7 @@ public class StatusController {
     }
 
     @GetMapping("/findAll")
+    @Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR})
     public ResponseEntity<List<StatusDTO>> findAll(@RequestParam int page, @RequestParam int limit) {
         final List<StatusDTO> statusDTO = statusService.findAll(page, limit);
         return new ResponseEntity<>(statusDTO, HttpStatus.OK);

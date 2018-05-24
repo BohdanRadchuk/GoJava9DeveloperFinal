@@ -3,14 +3,17 @@ package com.javanine.finalProject.controller;
 import com.javanine.finalProject.dto.PositionDTO;
 import com.javanine.finalProject.model.Position;
 import com.javanine.finalProject.service.PositionService;
+import com.javanine.finalProject.util.RoleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/position")
+@Secured({RoleUtil.ROLE_ADMIN})
 public class PositionController {
 
     @Autowired
@@ -41,6 +44,7 @@ public class PositionController {
     }
 
     @GetMapping("/findAll")
+    @Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR})
     public ResponseEntity<List<PositionDTO>> findAll(@RequestParam int page, @RequestParam int limit) {
         final List<PositionDTO> positionDTO = positionService.findAll(page, limit);
         return new ResponseEntity<>(positionDTO, HttpStatus.OK);

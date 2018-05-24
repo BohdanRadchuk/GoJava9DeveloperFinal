@@ -3,15 +3,18 @@ package com.javanine.finalProject.controller;
 import com.javanine.finalProject.dto.WorkingDayDTO;
 import com.javanine.finalProject.model.WorkingDay;
 import com.javanine.finalProject.service.WorkingDayService;
+import com.javanine.finalProject.util.RoleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/working-day")
+@Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR})
 public class WorkingDayController {
 
     @Autowired
@@ -42,6 +45,7 @@ public class WorkingDayController {
     }
 
     @GetMapping("/findByEmployee")
+    @Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR, RoleUtil.ROLE_EMPLOYEE})
     public ResponseEntity<List<WorkingDayDTO>> findByEmployee(@RequestParam Long id, Date startDate, Date endDate) {
         final List<WorkingDayDTO> dayDTO = workingDayService.findByEmployee(id, startDate, endDate);
         return new ResponseEntity<>(dayDTO, HttpStatus.OK);

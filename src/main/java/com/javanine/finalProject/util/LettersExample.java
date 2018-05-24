@@ -13,13 +13,11 @@ import java.text.SimpleDateFormat;
 
 @Service
 public class LettersExample {
-
     /**
      * create message for employee's month salary
      * @param employeeSheet - employee sheet
      * @return - employee sheet like message
      */
-
     @Autowired
     private EmployeeService employeeService;
 
@@ -38,6 +36,4 @@ public class LettersExample {
         message +="</ol></p>";
         return message;
     }
-
-
 }

@@ -3,14 +3,17 @@ package com.javanine.finalProject.controller;
 import com.javanine.finalProject.dto.DepartmentDTO;
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.service.DepartmentService;
+import com.javanine.finalProject.util.RoleUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/department")
+@Secured({RoleUtil.ROLE_ADMIN})
 public class DepartmentController {
 
     @Autowired
@@ -41,6 +44,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/findAll")
+    @Secured({RoleUtil.ROLE_ADMIN, RoleUtil.ROLE_MODERATOR})
     public ResponseEntity<List<DepartmentDTO>> findAll(@RequestParam int page, @RequestParam int limit) {
         final List<DepartmentDTO> departments = departmentService.findAll(page, limit);
         return new ResponseEntity<>(departments, HttpStatus.OK);
