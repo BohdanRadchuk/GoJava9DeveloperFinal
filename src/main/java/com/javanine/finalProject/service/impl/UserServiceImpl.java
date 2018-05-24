@@ -12,12 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
+
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,4 +1,4 @@
-package com.javanine.finalProject.utils;
+package com.javanine.finalProject.util;
 
 import com.javanine.finalProject.dto.EmployeeDTO;
 import com.javanine.finalProject.model.Employee;

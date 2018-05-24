@@ -1,4 +1,4 @@
-package com.javanine.finalProject.utils;
+package com.javanine.finalProject.util;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;

@@ -11,7 +11,6 @@ import com.javanine.finalProject.service.CountService;
 import com.javanine.finalProject.service.WorkingDayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.*;
@@ -79,13 +78,6 @@ public class CountServiceImpl implements CountService {
        /* employeeSheet.setWorkingHours(workingHours);
         employeeSheet.setHolidayHours(holidayHours);
         employeeSheet.setHospitalHours(hospitalHours);*/
-
-
         return employeeSheet;
     }
-
-
-
-
-
 }
