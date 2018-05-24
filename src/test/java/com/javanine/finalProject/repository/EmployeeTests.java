@@ -1,4 +1,4 @@
-package com.javanine.finalProject;
+package com.javanine.finalProject.repository;
 
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.repository.EmployeeRepository;

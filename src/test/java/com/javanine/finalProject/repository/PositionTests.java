@@ -71,5 +71,4 @@ public class PositionTests {
         department.setName("Department 1");
         return department;
     }
-
 }

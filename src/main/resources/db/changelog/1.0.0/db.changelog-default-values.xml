@@ -298,6 +298,14 @@
             <column name="employee_id" value="5"/>
             <column name="hours" value="8"/>
         </insert>
+        <insert tableName="working_day">
+            <column name="id" value="7"/>
+            <column name="date" value="2018.04.11"/>
+            <column name="event_id" value="1"/>
+            <column name="status_id" value="2"/>
+            <column name="employee_id" value="1"/>
+            <column name="hours" value="8"/>
+        </insert>
     </changeSet>
 
     <!-- Settlement sheet -->
