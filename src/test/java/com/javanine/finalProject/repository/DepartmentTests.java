@@ -1,7 +1,6 @@
 package com.javanine.finalProject.repository;
 
 import com.javanine.finalProject.model.Department;
-import com.javanine.finalProject.repository.DepartmentRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,7 +47,6 @@ public class DepartmentTests {
      */
     @Test(expected = InvalidDataAccessApiUsageException.class)
     public void sendNullId() {
-
         Long id = null;
         departmentRepository.findById(id).get();
     }
