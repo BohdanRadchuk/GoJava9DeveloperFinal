@@ -1,6 +1,6 @@
 package com.javanine.finalProject.service;
 
-import com.javanine.finalProject.dto.EmployeeDTO;
+import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.SettlementSheet;
 
 public interface CountService {
@@ -9,5 +9,5 @@ public interface CountService {
      * @param employees - employee
      * @return - month sheet for employee
      */
-    SettlementSheet calculateEmployeeSheet(EmployeeDTO employees);
+    SettlementSheet calculateEmployeeSheet(Employee employees);
 }

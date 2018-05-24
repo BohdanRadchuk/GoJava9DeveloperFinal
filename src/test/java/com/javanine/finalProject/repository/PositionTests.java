@@ -1,7 +1,10 @@
 package com.javanine.finalProject.repository;
 
+
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.model.Position;
+import com.javanine.finalProject.repository.DepartmentRepository;
+import com.javanine.finalProject.repository.PositionRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 public class PositionTests {
+
 
     /**
      * The repository's layer object
@@ -60,6 +64,7 @@ public class PositionTests {
     public Position createNewPosition() {
         Position position = new Position();
         Department department = createNewDepartment();
+        department.setName("positionDepartment");
         departmentRepository.save(department);
         position.setName("TestPosition");
         position.setDepartmentId(department.getId());
