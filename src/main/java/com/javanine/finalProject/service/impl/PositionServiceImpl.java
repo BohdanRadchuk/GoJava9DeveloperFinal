@@ -12,6 +12,9 @@ import java.util.List;
 import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
 
+/**
+ * Service layer {@link Position,PositionService}
+ */
 @Slf4j
 @Service
 public class PositionServiceImpl implements PositionService {
@@ -19,6 +22,11 @@ public class PositionServiceImpl implements PositionService {
     @Autowired
     private PositionRepository positionRepository;
 
+    /**
+     * The method calls repository's method to get position by name;
+     * @param name - name
+     * @return position name
+     */
     @Override
     public PositionDTO findByName(String name) {
         hasText(name, "name is null");
@@ -26,6 +34,11 @@ public class PositionServiceImpl implements PositionService {
         return positionRepository.findByName(name);
     }
 
+    /**
+     * The method calls repository's method to save position
+     * @param position - position
+     * @return saved position
+     */
     @Override
     public PositionDTO save(Position position) {
         notNull(position, "position is null");
@@ -34,6 +47,11 @@ public class PositionServiceImpl implements PositionService {
         return positionRepository.findInId(savedPosition.getId());
     }
 
+    /**
+     * The method calls repository's method to get position by id
+     * @param id - id
+     * @return id position
+     */
     @Override
     public PositionDTO findById(Long id) {
         notNull(id, "id is null");
@@ -41,12 +59,23 @@ public class PositionServiceImpl implements PositionService {
         return positionRepository.findInId(id);
     }
 
+    /**
+     * The method calls repository's method to get list of positions
+     * @param page -  page, starts from 0
+     * @param limit - limit of pages
+     * @return list
+     */
     @Override
     public List<PositionDTO> findAll(int page, int limit) {
         log.info("Found all positions");
         return positionRepository.findAllDto(PageRequest.of(page, limit));
     }
 
+    /**
+     * The method calls repository's method to update position
+     * @param position - position
+     * @return saved position
+     */
     @Override
     public PositionDTO update(Position position) {
         notNull(position, "position is null");
@@ -55,6 +84,10 @@ public class PositionServiceImpl implements PositionService {
         return positionRepository.findInId(saved.getId());
     }
 
+    /**
+     * The method calls repository's method to delete position by id
+     * @param id - id
+     */
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");

@@ -19,6 +19,12 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     public JavaMailSender emailSender;
 
+    /**
+     * Send message
+     * @param to - addressee
+     * @param subject - subject
+     * @param text - body of message
+     */
     @Override
     public void sendSimpleMessage(String to, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -29,6 +35,14 @@ public class EmailServiceImpl implements EmailService {
         log.info("Sent simple message");
     }
 
+    /**
+     * Send message with attachment
+     * @param to - addressee
+     * @param subject - subject
+     * @param text - body of message
+     * @param pathToAttachment - attachment
+     * @throws MessagingException - exception
+     */
     @Override
     public void sendMessageWithAttachment(String to, String subject, String text, String pathToAttachment) throws MessagingException {
         MimeMessage message = emailSender.createMimeMessage();

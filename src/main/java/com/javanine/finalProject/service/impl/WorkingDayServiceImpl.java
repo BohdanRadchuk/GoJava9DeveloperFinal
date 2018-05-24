@@ -21,6 +21,9 @@ import java.util.LinkedList;
 import java.util.List;
 import static org.springframework.util.Assert.notNull;
 
+/**
+ * Service layer {@link WorkingDay,WorkingDayService}
+ */
 @Slf4j
 @Transactional
 @Service
@@ -35,6 +38,11 @@ public class WorkingDayServiceImpl implements WorkingDayService {
     @Autowired
     private EventRepository eventRepository;
 
+    /**
+     * The method calls repository's method to save workingDay
+     * @param workingDay - workingDay
+     * @return saved workingDay
+     */
     @Override
     public WorkingDayDTO save(WorkingDay workingDay) {
         notNull(workingDay, "workingDay is null");
@@ -43,6 +51,11 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         return findById(saved.getId());
     }
 
+    /**
+     * The method calls repository's method to get workingDay by id using {@link EventDTO,StatusDTO,EmployeeDTO}
+     * @param id - id
+     * @return workingDayDTO
+     */
     @Override
     public WorkingDayDTO findById(Long id) {
         notNull(id, "id is null");
@@ -63,6 +76,12 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         return workingDayDTO;
     }
 
+    /**
+     * The method calls repository's method to get list of workingDays
+     * @param page - page, count starts from 0
+     * @param limit - page limit
+     * @return list
+     */
     @Override
     public List<WorkingDayDTO> findAll(int page, int limit) {
         final List<WorkingDay> dayList = workingDayRepository.findAll(PageRequest.of(page, limit)).getContent();
@@ -86,6 +105,11 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         return list;
     }
 
+    /**
+     * The method calls repository's method to update workingDay
+     * @param workingDay - workingDay
+     * @return updated workingDay
+     */
     @Override
     public WorkingDayDTO update(WorkingDay workingDay) {
         notNull(workingDay, "working day is null");
@@ -94,6 +118,10 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         return findById(updated.getId());
     }
 
+    /**
+     * The method calls repository's method to delete workingDay
+     * @param id - id
+     */
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");
@@ -101,6 +129,13 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         workingDayRepository.deleteById(id);
     }
 
+    /**
+     * The method calls repository's method to get workingDay by employee
+     * @param employeeId - employee Id
+     * @param startDate - start Date
+     * @param endDate - end Date
+     * @return list
+     */
     @Override
     public List<WorkingDayDTO> findByEmployee(Long employeeId, Date startDate, Date endDate) {
         notNull(employeeId, "employee id is null");

@@ -12,6 +12,10 @@ import java.util.List;
 import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
 
+/**
+ * Service layer {@link Department,DepartmentService}
+ */
+
 @Slf4j
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
@@ -19,6 +23,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
 
+    /**
+     * The method calls repository's method to find a department by name
+     * @param name - name
+     * @return name of department
+     */
     @Override
     public DepartmentDTO findByName(String name) {
         hasText(name, "name is empty");
@@ -26,6 +35,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findByNameDto(name);
     }
 
+    /**
+     * The method calls repository's method to save a department
+     * @param department - department
+     * @return saved department
+     */
     @Override
     public DepartmentDTO save(Department department) {
         notNull(department, "department is null");
@@ -34,6 +48,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findInId(savedDepartment.getId());
     }
 
+    /**
+     * The method calls repository's method to find department by id
+     * @param id - id
+     * @return id department
+     */
     @Override
     public DepartmentDTO findById(Long id) {
         notNull(id, "id is null");
@@ -41,12 +60,23 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findInId(id);
     }
 
+    /**
+     * The method calls repository's method to get list of departments
+     * @param page - starts from 0
+     * @param limit - limit of pages
+     * @return list
+     */
     @Override
     public List<DepartmentDTO> findAll(int page, int limit) {
         log.info("Found all departments");
         return departmentRepository.findAllDto(PageRequest.of(page, limit));
     }
 
+    /**
+     *The method calls repository's method to update department
+     * @param department - department
+     * @return updated department
+     */
     @Override
     public DepartmentDTO update(Department department) {
         notNull(department, "department is null");
@@ -55,6 +85,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findInId(updated.getId());
     }
 
+    /**
+     * The method calls repository's method to delete department
+     * @param id - id
+     */
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");

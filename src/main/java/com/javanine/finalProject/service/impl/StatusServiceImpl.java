@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import static org.springframework.util.Assert.notNull;
 
+/**
+ * Service layer {@link Status,StatusService}
+ */
 @Slf4j
 @Service
 public class StatusServiceImpl implements StatusService {
@@ -18,6 +21,11 @@ public class StatusServiceImpl implements StatusService {
     @Autowired
     private StatusRepository statusRepository;
 
+    /**
+     * The method calls repository's method to save status
+     * @param status - status
+     * @return saved status
+     */
     @Override
     public StatusDTO save(Status status) {
         notNull(status, "status is null");
@@ -26,6 +34,11 @@ public class StatusServiceImpl implements StatusService {
         return statusRepository.findInId(saved.getId());
     }
 
+    /**
+     * The method calls repository's method to get status by id
+     * @param id - id
+     * @return id status
+     */
     @Override
     public StatusDTO findById(Long id) {
         notNull(id, "id is null");
@@ -33,12 +46,23 @@ public class StatusServiceImpl implements StatusService {
         return statusRepository.findInId(id);
     }
 
+    /**
+     * The method calls repository's method to get list of statuses
+     * @param page - page, count starts from 0
+     * @param limit - limit of pages
+     * @return list
+     */
     @Override
     public List<StatusDTO> findAll(int page, int limit) {
         log.info("Got all statuses");
         return statusRepository.findAllDto(PageRequest.of(page, limit));
     }
 
+    /**
+     * The method calls repository's method to update status
+     * @param status - status
+     * @return saved status
+     */
     @Override
     public StatusDTO update(Status status) {
         notNull(status, "status is null");
@@ -47,6 +71,10 @@ public class StatusServiceImpl implements StatusService {
         return statusRepository.findInId(saved.getId());
     }
 
+    /**
+     * The method calls repository's method to delete status
+     * @param id - id
+     */
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");

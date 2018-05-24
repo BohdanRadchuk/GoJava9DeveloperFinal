@@ -17,6 +17,9 @@ import java.util.List;
 import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
 
+/**
+ * Service layer {@link User}
+ */
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,6 +39,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.findInEmail(email);
     }
 
+    /**
+     * The method calls repository's method to save user
+     * @param user - user
+     * @return created user
+     */
     @Override
     public UserDTO save(User user) {
         notNull(user, "user is null");
@@ -48,6 +56,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.findInId(created.getId());
     }
 
+    /**
+     * The method calls repository's method to get useer by id
+     * @param id - id
+     * @return id user
+     */
     @Override
     public UserDTO findById(Long id) {
         notNull(id, "id is null");
@@ -55,12 +68,23 @@ public class UserServiceImpl implements UserService {
         return userRepository.findInId(id);
     }
 
+    /**
+     * The method calls repository's method to get list of users
+     * @param page - page, count starts from 0
+     * @param limit - page limit
+     * @return list
+     */
     @Override
     public List<UserDTO> findAll(int page, int limit) {
         log.info("Found all users");
         return userRepository.findAllDto(PageRequest.of(page, limit));
     }
 
+    /**
+     * The method calls repository's method to update user
+     * @param user - user
+     * @return updated user
+     */
     @Override
     public UserDTO update(User user) {
         notNull(user, "user is null");
@@ -69,6 +93,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.findInId(updated.getId());
     }
 
+    /**
+     * The method calls repository's method to delete user
+     * @param id - id
+     */
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");

@@ -14,12 +14,21 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Service layer {@link User,UserDetailsService}
+ */
 @Slf4j
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Load user by username calling repository`s method getting by email
+     * @param email - email
+     * @return user
+     * @throws UsernameNotFoundException - exception of not found name
+     */
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
