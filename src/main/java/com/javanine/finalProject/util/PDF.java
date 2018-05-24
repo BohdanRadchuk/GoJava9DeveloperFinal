@@ -4,14 +4,12 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
 import lombok.extern.slf4j.Slf4j;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.Objects;
 
 @Slf4j
 public class PDF {
-
     /**
      * Create PDF file from text in PDFFiles folder
      *
@@ -20,7 +18,6 @@ public class PDF {
      * @return - PDF file
      */
     public static File createPDF(String pdfName, String text) {
-
         String tmp_name_dir = System.getProperty("user.dir") + File.separator + "PDFFiles";
         String fileName = tmp_name_dir + File.separator + pdfName + ".pdf";
         File dir = new File(tmp_name_dir);

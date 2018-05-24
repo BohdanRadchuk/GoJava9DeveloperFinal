@@ -1,6 +1,5 @@
 package com.javanine.finalProject.utils;
 
-
 import com.javanine.finalProject.dto.EmployeeDTO;
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.SettlementSheet;
@@ -25,11 +24,8 @@ public class LettersExample {
     private EmployeeService employeeService;
 
     public String createSalaryMessage(SettlementSheet employeeSheet){
-
-        System.out.println(employeeSheet);
         SimpleDateFormat format = new SimpleDateFormat("MMMM  yyyy");
         EmployeeDTO employee = employeeService.findById(employeeSheet.getId());
-
 
         String message = "<p>Dear, "+  employee.getFirstName()+" "+employee.getLastName()+"</p>";
         message += "<p>Your total salary for "+format.format(employeeSheet.getMonth())+ format.format(employeeSheet.getYear())+ " is: "+employeeSheet.getSalary()+"</p>";
