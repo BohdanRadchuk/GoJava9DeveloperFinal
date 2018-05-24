@@ -1,9 +1,12 @@
-package com.javanine.finalProject;
+package com.javanine.finalProject.repository;
 
 
 import com.javanine.finalProject.model.Department;
-import com.javanine.finalProject.repository.DepartmentRepository;
+import com.javanine.finalProject.model.Event;
+import com.javanine.finalProject.model.enums.EmployeeEvent;
+import com.javanine.finalProject.repository.EventRepository;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,27 +18,31 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
-public class DepartmentTests {
+public class EventTests {
 
 
     /**
      * The repository's layer object
      */
 
-    @Autowired(required = true)
-    private DepartmentRepository departmentRepository;
+    @Autowired
+    private EventRepository eventRepository;
+
+    @Before
+    public void before (){
+        eventRepository.deleteAll();
+    }
 
     /**
      * The test-method for same-named repository's default method that get one entity by ID.
      */
     @Test
-    public void testSaveGetDepartment() {
-        Department actual = new Department();
-        actual.setName("Department 1");
-        departmentRepository.save(actual);
-        departmentRepository.flush();
+    public void testSaveGetEvent() {
+        Event actual = createNewEvent();
+        eventRepository.save(actual);
+        eventRepository.flush();
 
-        Department obtained = departmentRepository.findById(actual.getId()).get();
+        Event obtained = eventRepository.findById(actual.getId()).get();
 
         Assert.assertEquals(actual, obtained);
     }
@@ -47,7 +54,13 @@ public class DepartmentTests {
     public void sendNullId() {
 
         Long id = null;
-        departmentRepository.findById(id).get();
+        eventRepository.findById(id).get();
+    }
+
+    public Event createNewEvent() {
+        Event event = new Event();
+        event.setEventName(EmployeeEvent.WORKING_DAY);
+        return event;
     }
 
 }
