@@ -1,5 +1,6 @@
 package com.javanine.finalProject.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Table(name = "settlement_sheet")
+@EqualsAndHashCode
 public class SettlementSheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +27,13 @@ public class SettlementSheet {
     private int month;
 
     @Column(name="working_hours")
-    private BigDecimal workingHours;
+    private int workingHours;
 
     @Column(name="hospital_hours")
-    private BigDecimal hospitalHours;
+    private int hospitalHours;
 
     @Column(name="holiday_hours")
-    private BigDecimal holidayHours;
+    private int holidayHours;
 
     @Column(name="salary")
     private BigDecimal salary;
