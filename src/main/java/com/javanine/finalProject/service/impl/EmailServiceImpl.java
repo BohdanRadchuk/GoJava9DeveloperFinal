@@ -1,6 +1,7 @@
 package com.javanine.finalProject.service.impl;
 
 import com.javanine.finalProject.service.EmailService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
-
+@Slf4j
 @Service
 public class EmailServiceImpl implements EmailService {
     @Autowired
@@ -23,6 +24,7 @@ public class EmailServiceImpl implements EmailService {
         message.setSubject(subject);
         message.setText(text);
         emailSender.send(message);
+        log.info("Sent simple message");
     }
 
     @Override
@@ -37,5 +39,6 @@ public class EmailServiceImpl implements EmailService {
         FileSystemResource file = new FileSystemResource(new File(pathToAttachment));
         helper.addAttachment("Invoice", file);
         emailSender.send(message);
+        log.info("Sent message with attachment");
     }
 }

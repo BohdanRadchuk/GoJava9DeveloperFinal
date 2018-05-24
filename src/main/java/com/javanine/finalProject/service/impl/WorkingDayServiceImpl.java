@@ -10,6 +10,7 @@ import com.javanine.finalProject.repository.EventRepository;
 import com.javanine.finalProject.repository.StatusRepository;
 import com.javanine.finalProject.repository.WorkingDayRepository;
 import com.javanine.finalProject.service.WorkingDayService;
+import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -21,7 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.springframework.util.Assert.notNull;
-
+@Slf4j
 @Transactional
 @Service
 public class WorkingDayServiceImpl implements WorkingDayService {
@@ -39,6 +40,7 @@ public class WorkingDayServiceImpl implements WorkingDayService {
     public WorkingDayDTO save(WorkingDay workingDay) {
         notNull(workingDay, "workingDay is null");
         final WorkingDay saved = workingDayRepository.save(workingDay);
+        log.info("WorkingDay created");
         return findById(saved.getId());
     }
 
@@ -58,6 +60,7 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         workingDayDTO.setStatus(statusDTO);
         workingDayDTO.setEmployee(employeeDTO);
         workingDayDTO.setHours(workingDay.getHours());
+        log.info("Found working day");
         return workingDayDTO;
     }
 
@@ -80,6 +83,7 @@ public class WorkingDayServiceImpl implements WorkingDayService {
 
             list.add(workingDayDTO);
         }
+        log.info("Found all working days");
         return list;
     }
 
@@ -87,12 +91,14 @@ public class WorkingDayServiceImpl implements WorkingDayService {
     public WorkingDayDTO update(WorkingDay workingDay) {
         notNull(workingDay, "working day is null");
         final WorkingDay updated = workingDayRepository.saveAndFlush(workingDay);
+        log.info("Working day created");
         return findById(updated.getId());
     }
 
     @Override
     public void deleteById(Long id) {
         notNull(id, "id is null");
+        log.info("Working day deleted");
         workingDayRepository.deleteById(id);
     }
 
@@ -106,6 +112,7 @@ public class WorkingDayServiceImpl implements WorkingDayService {
         for (Long elem : days) {
             list.add(findById(elem));
         }
+        log.info("Employee`s working days");
         return list;
     }
 }
