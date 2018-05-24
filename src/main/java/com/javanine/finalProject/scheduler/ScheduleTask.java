@@ -1,8 +1,10 @@
 package com.javanine.finalProject.scheduler;
 
 import com.javanine.finalProject.dto.EmployeeDTO;
+import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.SettlementSheet;
 import com.javanine.finalProject.model.User;
+import com.javanine.finalProject.repository.EmployeeRepository;
 import com.javanine.finalProject.repository.UserRepository;
 import com.javanine.finalProject.service.EmployeeService;
 import com.javanine.finalProject.service.SettlementSheetService;
@@ -32,7 +34,7 @@ public class ScheduleTask {
     private CountServiceImpl countService;
 
     @Autowired
-    private EmployeeService employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     @Autowired
     private SettlementSheetService settlementSheetService;
@@ -45,14 +47,15 @@ public class ScheduleTask {
     public void scheduleFixedDelayTask() {
         System.out.println("Fixed delay task - " + System.currentTimeMillis() / 10000);
         //EmailServiceImpl emailService = new EmailServiceImpl();
-        //emailService.sendSimpleMessage("jano.ssh@gmail.com", "test", "some text");
+        //emailService.sendSimpleMessage("example@gmail.com", "test", "some text");
         scheduleTaskUsingCronExpression();
     }
 
     @Scheduled(cron = "1 0 0 1 * ?") //https://www.freeformatter.com/cron-expression-generator-quartz.html
     public void scheduleTaskUsingCronExpression() {
-        List<EmployeeDTO> employeesList = employeeRepository.findAll(1,7);
-        for (EmployeeDTO employees : employeesList) {
+        List<Employee> employeesList = employeeRepository.findAll();
+        System.out.println(employeesList);
+        for (Employee employees : employeesList) {
             SettlementSheet employeeSheet = countService.calculateEmployeeSheet(employees);
             settlementSheetService.save(employeeSheet);
 
