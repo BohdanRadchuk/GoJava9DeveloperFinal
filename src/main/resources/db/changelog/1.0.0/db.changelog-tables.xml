@@ -33,7 +33,7 @@
                 <constraints nullable = "false"/>
             </column>
         </createTable>
-        <!--<addUniqueConstraint tableName="user" columnNames="email" constraintName="const_email" schemaName="spring"/>-->
+        <addUniqueConstraint tableName="user" columnNames="email" constraintName="const_email" schemaName="spring"/>
     </changeSet>
 
     <!-- User-roles -->
