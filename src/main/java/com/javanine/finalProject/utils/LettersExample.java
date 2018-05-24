@@ -1,12 +1,18 @@
 package com.javanine.finalProject.utils;
 
 
+import com.javanine.finalProject.dto.EmployeeDTO;
+import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.SettlementSheet;
+import com.javanine.finalProject.repository.EmployeeRepository;
 import com.javanine.finalProject.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 
+@Service
 public class LettersExample {
 
     /**
@@ -20,8 +26,12 @@ public class LettersExample {
 
     public String createSalaryMessage(SettlementSheet employeeSheet){
 
+        System.out.println(employeeSheet);
         SimpleDateFormat format = new SimpleDateFormat("MMMM  yyyy");
-        String message = "<p>Dear, "+ employeeService.findById(employeeSheet.getEmployeeId()).getFirstName()+" "+employeeService.findById(employeeSheet.getEmployeeId()).getLastName()+"</p>";
+        EmployeeDTO employee = employeeService.findById(employeeSheet.getId());
+
+
+        String message = "<p>Dear, "+  employee.getFirstName()+" "+employee.getLastName()+"</p>";
         message += "<p>Your total salary for "+format.format(employeeSheet.getMonth())+ format.format(employeeSheet.getYear())+ " is: "+employeeSheet.getSalary()+"</p>";
         message += "<p><div>Your statistic:</div><ol>";
         message += "<li>"+ " WorkingHours -- "+" total hours is "+employeeSheet.getWorkingHours()+"</li>";

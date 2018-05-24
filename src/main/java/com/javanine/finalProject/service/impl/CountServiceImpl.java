@@ -76,9 +76,9 @@ public class CountServiceImpl implements CountService {
         employeeSheet.setMonth(startDate.getYear());
         employeeSheet.setEmployeeId(employees.getId());
         employeeSheet.setSalary((workingHours.add(holidayHours.add(hospitalHours).multiply(employees.getHourlyRate()))));
-        employeeSheet.setWorkingHours(workingHours);
+       /* employeeSheet.setWorkingHours(workingHours);
         employeeSheet.setHolidayHours(holidayHours);
-        employeeSheet.setHospitalHours(hospitalHours);
+        employeeSheet.setHospitalHours(hospitalHours);*/
 
 
         return employeeSheet;

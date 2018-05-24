@@ -1,7 +1,6 @@
 package com.javanine.finalProject.service;
 
 import com.javanine.finalProject.dto.EmployeeDTO;
-import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.SettlementSheet;
 
 public interface CountService {

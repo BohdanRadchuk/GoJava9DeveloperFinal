@@ -3,9 +3,11 @@ package com.javanine.finalProject.scheduler;
 import com.javanine.finalProject.dto.EmployeeDTO;
 import com.javanine.finalProject.model.Employee;
 import com.javanine.finalProject.model.SettlementSheet;
+import com.javanine.finalProject.model.User;
+import com.javanine.finalProject.repository.EmployeeRepository;
+import com.javanine.finalProject.repository.UserRepository;
 import com.javanine.finalProject.service.EmployeeService;
 import com.javanine.finalProject.service.SettlementSheetService;
-import com.javanine.finalProject.service.UserService;
 import com.javanine.finalProject.service.impl.CountServiceImpl;
 import com.javanine.finalProject.service.impl.EmailServiceImpl;
 import com.javanine.finalProject.service.impl.EmployeeServiceImpl;
@@ -27,7 +29,7 @@ import java.util.List;
 public class ScheduleTask {
 
     @Autowired
-    EmployeeServiceImpl employeeService;
+    private EmployeeServiceImpl employeeService;
 
     @Autowired
     private EmailServiceImpl emailService;
@@ -35,14 +37,17 @@ public class ScheduleTask {
     @Autowired
     private CountServiceImpl countService;
 
+    /*   @Autowired
+       private SettlementSheet settlementSheet;*/
     @Autowired
-    private SettlementSheet settlementSheet;
+    private EmployeeService employeeRepository;
+
 
     @Autowired
     private SettlementSheetService settlementSheetService;
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     //testing
     @Scheduled(fixedDelay = 10000)
@@ -59,7 +64,7 @@ public class ScheduleTask {
     @Scheduled(cron = "1 0 0 1 * ?") //https://www.freeformatter.com/cron-expression-generator-quartz.html
     public void scheduleTaskUsingCronExpression() {
 
-        List<EmployeeDTO> employeesList = employeeService.findAll(1,1);
+        List<EmployeeDTO> employeesList = employeeRepository.findAll(1,7);
         for (EmployeeDTO employees : employeesList) {
             SettlementSheet employeeSheet = countService.calculateEmployeeSheet(employees);
             //save archive salary
@@ -67,7 +72,9 @@ public class ScheduleTask {
             settlementSheetService.save(employeeSheet);
 
             //send email
-            String mail = employees.getUser().getEmail();
+
+            User user = userRepository.findById(employees.getId()).get();
+            String mail = user.getEmail();
             LettersExample lettersExample = new LettersExample();
             String sendingMessage = lettersExample.createSalaryMessage(employeeSheet);
 
