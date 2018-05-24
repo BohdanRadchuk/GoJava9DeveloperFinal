@@ -25,13 +25,13 @@ public class SettlementSheet {
     private int month;
 
     @Column(name="working_hours")
-    private int workingHours;
+    private BigDecimal workingHours;
 
     @Column(name="hospital_hours")
-    private int hospitalHours;
+    private BigDecimal hospitalHours;
 
     @Column(name="holiday_hours")
-    private int holidayHours;
+    private BigDecimal holidayHours;
 
     @Column(name="salary")
     private BigDecimal salary;
