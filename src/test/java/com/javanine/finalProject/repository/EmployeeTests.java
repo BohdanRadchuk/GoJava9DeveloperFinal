@@ -45,8 +45,6 @@ public class EmployeeTests {
         roleRepository.deleteAll();
     }
 
-
-
     @Test
     public void deleteEmployee() {
         List<Employee> employees;
@@ -74,7 +72,6 @@ public class EmployeeTests {
         department.setName("Department 1");
         departmentRepository.save(department);
         departmentRepository.flush();
-
 
 
         Position position = new Position();

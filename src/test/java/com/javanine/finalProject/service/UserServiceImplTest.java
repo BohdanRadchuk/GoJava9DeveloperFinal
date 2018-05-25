@@ -24,7 +24,6 @@ public class UserServiceImplTest {
         public UserService userService() {
             return new UserServiceImpl();
         }
-
     }
 
     @Autowired
