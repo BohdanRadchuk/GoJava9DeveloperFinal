@@ -6,13 +6,12 @@ import com.javanine.finalProject.repository.StatusRepository;
 import com.javanine.finalProject.service.impl.StatusServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
-import static org.mockito.Mockito.times;
 
 @RunWith(SpringRunner.class)
 public class StatusServiceImplTest {
@@ -55,14 +54,14 @@ public class StatusServiceImplTest {
     }
 
     private void trySaveStatus(Status status) {
-        Mockito.when(statusRepository.save(status)).thenReturn(status);
+        when(statusRepository.save(status)).thenReturn(status);
         statusService.save(status);
-        Mockito.verify(statusRepository, times(1)).save(status);
+        verify(statusRepository, times(1)).save(status);
     }
 
     private void tryDeleteStatus(Long id) {
-        Mockito.doNothing().when(statusRepository).deleteById(id);
+        doNothing().when(statusRepository).deleteById(id);
         statusService.deleteById(id);
-        Mockito.verify(statusRepository, times(1)).deleteById(id);
+        verify(statusRepository, times(1)).deleteById(id);
     }
 }

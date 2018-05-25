@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
+
 /**
  * The class implements a set of methods for working
  * with entities of the {@link SettlementSheet} class.

@@ -7,7 +7,6 @@ import com.javanine.finalProject.service.impl.PositionServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -15,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 import javax.persistence.EntityNotFoundException;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 public class PositionServiceImplTest {
@@ -40,7 +39,7 @@ public class PositionServiceImplTest {
         PositionDTO position = new PositionDTO();
         position.setName("Recruiter");
 
-        Mockito.when(positionRepository.findByName(position.getName()))
+        when(positionRepository.findByName(position.getName()))
                 .thenReturn(position);
     }
 
@@ -59,9 +58,9 @@ public class PositionServiceImplTest {
         Position position = new Position();
         position.setDepartmentId(10L);
 
-        Mockito.when(positionRepository.save(position)).thenReturn(position);
+        when(positionRepository.save(position)).thenReturn(position);
         positionService.save(position);
-        Mockito.verify(positionRepository, times(1)).save(position);
+        verify(positionRepository, times(1)).save(position);
     }
 
     @Test
@@ -87,14 +86,14 @@ public class PositionServiceImplTest {
     }
 
     private void trySavePosition(Position position) {
-        Mockito.when(positionRepository.save(position)).thenReturn(position);
+        when(positionRepository.save(position)).thenReturn(position);
         positionService.save(position);
-        Mockito.verify(positionRepository, times(1)).save(position);
+        verify(positionRepository, times(1)).save(position);
     }
 
     private void tryDeletePosition(Long id) {
-        Mockito.doNothing().when(positionRepository).deleteById(id);
+        doNothing().when(positionRepository).deleteById(id);
         positionService.deleteById(id);
-        Mockito.verify(positionRepository, times(1)).deleteById(id);
+        verify(positionRepository, times(1)).deleteById(id);
     }
 }

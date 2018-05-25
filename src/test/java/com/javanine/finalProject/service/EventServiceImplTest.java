@@ -8,14 +8,13 @@ import com.javanine.finalProject.service.impl.EventServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 public class EventServiceImplTest {
@@ -40,7 +39,7 @@ public class EventServiceImplTest {
         EventDTO event = new EventDTO();
         event.setEventName(EmployeeEvent.WORKING_DAY);
 
-        Mockito.when(eventRepository.findByEventNameDto(event.getEventName()))
+        when(eventRepository.findByEventNameDto(event.getEventName()))
                 .thenReturn(event);
     }
 
@@ -75,14 +74,14 @@ public class EventServiceImplTest {
     }
 
     private void trySaveEvent(Event event) {
-        Mockito.when(eventRepository.save(event)).thenReturn(event);
+        when(eventRepository.save(event)).thenReturn(event);
         eventService.save(event);
-        Mockito.verify(eventRepository, times(1)).save(event);
+        verify(eventRepository, times(1)).save(event);
     }
 
     private void tryDeleteEvent(Long id) {
-        Mockito.doNothing().when(eventRepository).deleteById(id);
+        doNothing().when(eventRepository).deleteById(id);
         eventService.deleteById(id);
-        Mockito.verify(eventRepository, times(1)).deleteById(id);
+        verify(eventRepository, times(1)).deleteById(id);
     }
 }
