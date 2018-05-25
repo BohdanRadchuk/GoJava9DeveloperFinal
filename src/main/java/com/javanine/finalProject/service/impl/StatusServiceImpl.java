@@ -14,6 +14,7 @@ import static org.springframework.util.Assert.notNull;
 /**
  * Service layer {@link Status,StatusService}
  */
+
 @Slf4j
 @Service
 public class StatusServiceImpl implements StatusService {

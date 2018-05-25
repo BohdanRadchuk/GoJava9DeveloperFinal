@@ -6,10 +6,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import javax.persistence.*;
+
 /**
  * The class implements a set of methods for working
  * with entities of the {@link Role} class.
  */
+
 @Getter
 @Setter
 @ToString

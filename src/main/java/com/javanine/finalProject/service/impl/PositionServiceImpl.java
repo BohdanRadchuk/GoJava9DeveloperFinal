@@ -15,6 +15,7 @@ import static org.springframework.util.Assert.notNull;
 /**
  * Service layer {@link Position,PositionService}
  */
+
 @Slf4j
 @Service
 public class PositionServiceImpl implements PositionService {

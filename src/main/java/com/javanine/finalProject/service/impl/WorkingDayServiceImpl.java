@@ -24,6 +24,7 @@ import static org.springframework.util.Assert.notNull;
 /**
  * Service layer {@link WorkingDay,WorkingDayService}
  */
+
 @Slf4j
 @Transactional
 @Service

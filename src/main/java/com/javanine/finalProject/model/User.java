@@ -11,6 +11,7 @@ import java.util.List;
  * The class implements a set of methods for working
  * with entities of the {@link User} class.
  */
+
 @Getter
 @Setter
 @ToString

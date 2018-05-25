@@ -20,6 +20,7 @@ import static org.springframework.util.Assert.notNull;
 /**
  * Service layer {@link User}
  */
+
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {

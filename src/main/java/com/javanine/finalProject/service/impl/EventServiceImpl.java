@@ -16,6 +16,7 @@ import static org.springframework.util.Assert.notNull;
 /**
  * Service layer {@link Event,EventService}
  */
+
 @Slf4j
 @Service
 public class EventServiceImpl implements EventService {
