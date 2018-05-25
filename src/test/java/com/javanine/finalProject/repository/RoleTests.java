@@ -20,7 +20,6 @@ public class RoleTests {
     /**
      * The repository's layer object
      */
-
     @Autowired
     private RoleRepository roleRepository;
 

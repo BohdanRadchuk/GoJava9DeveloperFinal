@@ -19,7 +19,6 @@ public class DepartmentTests {
     /**
      * The repository's layer object
      */
-
     @Autowired
     private DepartmentRepository departmentRepository;
 

@@ -1,6 +1,5 @@
 package com.javanine.finalProject.repository;
 
-
 import com.javanine.finalProject.model.*;
 import com.javanine.finalProject.model.enums.UserRole;
 import org.junit.Assert;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

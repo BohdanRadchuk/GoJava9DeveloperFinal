@@ -1,10 +1,7 @@
 package com.javanine.finalProject.repository;
 
-
 import com.javanine.finalProject.model.Department;
 import com.javanine.finalProject.model.Position;
-import com.javanine.finalProject.repository.DepartmentRepository;
-import com.javanine.finalProject.repository.PositionRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,11 +17,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles("test")
 public class PositionTests {
 
-
     /**
      * The repository's layer object
      */
-
     @Autowired
     private PositionRepository positionRepository;
 

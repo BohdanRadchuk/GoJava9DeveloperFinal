@@ -20,7 +20,6 @@ public class EventTests {
     /**
      * The repository's layer object
      */
-
     @Autowired
     private EventRepository eventRepository;
 
