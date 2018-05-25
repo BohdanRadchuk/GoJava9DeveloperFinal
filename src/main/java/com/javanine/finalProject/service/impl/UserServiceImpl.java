@@ -18,7 +18,7 @@ import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Service layer {@link User}
+ * Service layer {@link UserService}
  */
 
 @Slf4j

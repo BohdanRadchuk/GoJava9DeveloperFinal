@@ -13,7 +13,7 @@ import java.util.List;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Service layer {@link SettlementSheet,SettlementSheetService}
+ * Service layer {@link SettlementSheetService}
  */
 
 @Slf4j

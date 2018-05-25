@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Service layer {@link User,UserDetailsService}
+ * Service layer {@link UserDetailsService}
  */
 
 @Slf4j

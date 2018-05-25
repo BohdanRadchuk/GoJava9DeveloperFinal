@@ -13,7 +13,7 @@ import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Service layer {@link Department,DepartmentService}
+ * Service layer {@link DepartmentService}
  */
 
 @Slf4j

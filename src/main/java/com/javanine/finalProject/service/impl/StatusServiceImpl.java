@@ -12,7 +12,7 @@ import java.util.List;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Service layer {@link Status,StatusService}
+ * Service layer {@link StatusService}
  */
 
 @Slf4j

@@ -22,7 +22,7 @@ import java.util.List;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Service layer {@link WorkingDay,WorkingDayService}
+ * Service layer {@link WorkingDayService}
  */
 
 @Slf4j

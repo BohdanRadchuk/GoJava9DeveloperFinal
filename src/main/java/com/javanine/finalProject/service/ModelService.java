@@ -2,6 +2,9 @@ package com.javanine.finalProject.service;
 
 import java.util.List;
 
+/**
+ * Interface for service's layer of application (CRUD methods)
+ */
 public interface ModelService<R, S, ID> {
 
     R save(S t);

@@ -14,7 +14,7 @@ import static org.springframework.util.Assert.hasText;
 import static org.springframework.util.Assert.notNull;
 
 /**
- * Service layer {@link Event,EventService}
+ * Service layer {@link EventService}
  */
 
 @Slf4j
